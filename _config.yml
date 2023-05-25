@@ -38,6 +38,18 @@ plugins:
 collections:
   topics:
     output: true
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "topics"
+    values:
+      layout: "topic"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
