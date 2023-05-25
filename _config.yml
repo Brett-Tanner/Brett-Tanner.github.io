@@ -36,6 +36,14 @@ plugins:
 
 # Collections
 collections:
+  css:
+    output: true
+  git:
+    output: true
+  jekyll:
+    output: true
+  rails:
+    output: true
   topics:
     output: true
 
