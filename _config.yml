@@ -42,6 +42,8 @@ collections:
     output: true
   jekyll:
     output: true
+  projects:
+    output: true
   rails:
     output: true
   topics:
@@ -54,6 +56,11 @@ defaults:
       type: "topics"
     values:
       layout: "topic"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
   - scope:
       path: ""
     values:
