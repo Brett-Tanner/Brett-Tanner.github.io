@@ -1,0 +1,6 @@
+<nav>
+  <a href="/">Home</a>
+  {% for jekyll in site.jekyll %}
+  <a href="{{ jekyll.url }}">{{ jekyll.title }}</a>
+  {% endfor %}
+</nav>

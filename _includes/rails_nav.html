@@ -1,0 +1,6 @@
+<nav>
+  <a href="/">Home</a>
+  {% for rails in site.rails %}
+  <a href="{{ rails.url }}">{{ rails.title }}</a>
+  {% endfor %}
+</nav>

@@ -1,0 +1,6 @@
+<nav>
+  <a href="/">Home</a>
+  {% for git in site.git %}
+  <a href="{{ git.url }}">{{ git.title }}</a>
+  {% endfor %}
+</nav>

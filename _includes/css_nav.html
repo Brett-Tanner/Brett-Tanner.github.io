@@ -1,0 +1,6 @@
+<nav>
+  <a href="/">Home</a>
+  {% for css in site.css %}
+  <a href="{{ css.url }}">{{ css.title }}</a>
+  {% endfor %}
+</nav>
