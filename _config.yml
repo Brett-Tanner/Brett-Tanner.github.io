@@ -43,6 +43,8 @@ collections:
     output: true
   rails:
     output: true
+  ruby:
+    output: true
   topics:
     output: true
 
