@@ -4,3 +4,22 @@ layout: jekyll
 ---
 
 <p>Essential snippets, summarised</p>
+
+<h2>Adding a Topic</h2>
+
+<ol>
+  <li>In config.yml, add it to the collections hash and set output: true</li>
+  <li>
+    Create a _topic_name folder in root, this will store the pages for
+    sub-topics, then create any sub-topics you know you'll need
+  </li>
+  <li>Manually add the layout to the frontmatter for that page</li>
+  <li>
+    Create the layout, can copy everything except the name of the nav from any
+    other layout
+  </li>
+  <li>
+    Create the nav, can copy and just ctrl+f the old topic. Then add it to the
+    layout.
+  </li>
+</ol>
