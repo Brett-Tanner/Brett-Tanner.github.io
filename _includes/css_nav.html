@@ -1,7 +1,37 @@
-<nav>
-  <a href="/">Home</a>
-  <a href="/topics/css">CSS</a>
-  {% for css in site.css %}
-  <a href="{{ css.url }}">{{ css.title }}</a>
-  {% endfor %}
+<nav
+  class="navbar navbar-expand-lg bg-primary d-flex align-items-center gap-3 p-3 fw-bold"
+>
+  <div class="container-fluid justify-content-around">
+    <a href="/" class="navbar-brand"
+      ><img
+        src="{{ site.baseurl }}/assets/images/home.svg"
+        class="img-fluid"
+        alt="Home"
+    /></a>
+    <a
+      href="/topics/css"
+      class="nav-item d-flex gap-2 justify-content-center align-items-center"
+      ><img
+        src="{{ site.baseurl }}/assets/images/css.png"
+        class="img-fluid w-25"
+        alt="CSS Logo"
+      />CSS</a
+    >
+    <div class="nav-item dropdown">
+      <a
+        href="#"
+        class="dropdown-toggle"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        >Topics</a
+      >
+      <ul class="dropdown-menu">
+        {% for css in site.css %}
+        <li class="dropdown-item">
+          <a href="{{ css.url }}" class="text-black">{{ css.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 </nav>

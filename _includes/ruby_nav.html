@@ -1,7 +1,22 @@
-<nav>
-  <a href="/">Home</a>
-  <a href="/topics/ruby">Ruby</a>
-  {% for ruby in site.ruby %}
-  <a href="{{ ruby.url }}">{{ ruby.title }}</a>
-  {% endfor %}
+<nav class="navbar bg-danger d-flex align-items-center gap-3 p-3 fw-bold">
+  <div class="container-fluid">
+    <a href="/" class="navbar-brand"
+      ><img
+        src="{{ site.baseurl }}/assets/images/home.svg"
+        class="img-fluid"
+        alt="Home"
+    /></a>
+    <a
+      href="/topics/ruby"
+      class="d-flex gap-2 justify-content-center align-items-center"
+      ><img
+        src="{{ site.baseurl }}/assets/images/ruby.png"
+        class="img-fluid w-25"
+        alt="Ruby Logo"
+      />Ruby</a
+    >
+    {% for ruby in site.ruby %}
+    <a href="{{ ruby.url }}">{{ ruby.title }}</a>
+    {% endfor %}
+  </div>
 </nav>
