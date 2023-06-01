@@ -3,9 +3,21 @@ title: Jekyll Cheatsheet
 layout: jekyll
 ---
 
-<p>Essential snippets, summarised</p>
+<h2 id="useful_commands">Useful Commands</h2>
 
-<h2>Adding a Topic</h2>
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action">
+    <h5 class="mb-1">
+      <code>bundle exec jekyll serve --livereload --incremental</code>
+    </h5>
+    <p class="mb-1">
+      Builds your site and makes it available on localhost:4000, with the site
+      being incrementally updated on saved changes.
+    </p>
+  </a>
+</div>
+
+<h2 id="adding_a_topic">Adding a Topic</h2>
 
 <ol>
   <li>In config.yml, add it to the collections hash and set output: true</li>
