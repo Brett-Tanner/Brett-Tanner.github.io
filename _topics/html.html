@@ -1,0 +1,15 @@
+---
+title: HTML
+---
+
+<p>Internet lego</p>
+
+HTML has native dialogs now? (like a modal but built in)
+
+<ul>
+  {% for topic in site.html %}
+  <li>
+    <h2><a href="{{ topic.url }}">{{ topic.title }}</a></h2>
+  </li>
+  {% endfor %}
+</ul>
