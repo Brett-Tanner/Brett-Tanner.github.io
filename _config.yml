@@ -37,6 +37,8 @@ collections:
     output: true
   git:
     output: true
+  html:
+    output: true
   jekyll:
     output: true
   projects:
