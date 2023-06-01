@@ -1,7 +1,39 @@
-<nav>
-  <a href="/">Home</a>
-  <a href="/topics/rails">Rails</a>
-  {% for rails in site.rails %}
-  <a href="{{ rails.url }}">{{ rails.title }}</a>
-  {% endfor %}
+<nav
+  class="navbar navbar-expand-lg bg-danger d-flex align-items-center gap-3 p-3 fw-bold"
+>
+  <div class="container-fluid justify-content-around">
+    <a href="/" class="navbar-brand"
+      ><img
+        src="{{ site.baseurl }}/assets/images/home.svg"
+        class="img-fluid"
+        alt="Home"
+    /></a>
+    <a
+      href="/topics/rails"
+      class="nav-item d-flex gap-2 justify-content-center align-items-center"
+      ><img
+        src="{{ site.baseurl }}/assets/images/rails.png"
+        class="img-fluid"
+        height="50"
+        width="50"
+        alt="Rails Logo"
+      />Rails</a
+    >
+    <div class="nav-item dropdown">
+      <a
+        href="#"
+        class="dropdown-toggle"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        >Topics</a
+      >
+      <ul class="dropdown-menu">
+        {% for rails in site.rails %}
+        <li class="dropdown-item">
+          <a href="{{ rails.url }}" class="text-black">{{ rails.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 </nav>
