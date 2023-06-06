@@ -1,5 +1,19 @@
+html {
+  scroll-padding-top: 86px;
+}
+
 body {
   color: white;
+}
+
+#table_of_contents {
+  flex: 0 1 20%;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  top: 100px;
+  order: 100;
+  height: min-content;
 }
 
 a {
@@ -11,7 +25,7 @@ a {
   background: #ff7434;
 }
 
-main#css a {
+main#css a:not(.list-group-item) {
   color: rgb(13, 202, 240);
 }
 
