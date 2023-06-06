@@ -196,3 +196,103 @@ layout: css
     </ul>
   </li>
 </ul>
+
+<h1 id="transitions">
+  <a
+    href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions"
+    >Transitions</a
+  >
+</h1>
+
+<ul>
+  <li>
+    Let you animate the transition between states of an element rather than
+    instantly changing
+  </li>
+  <li><code>transition</code> is shorthand for:</li>
+  <ul>
+    <li>
+      <code>transition-property</code> - Determines the CSS property to be
+      transitioned (e.g. background-color)
+    </li>
+    <li>
+      <code>transition-duration</code> - Determines how long the transition
+      takes from start to finish
+    </li>
+    <li>
+      <code>transition-timing-function</code> - Determines the rate at which the
+      transition progresses, has keywords like ease-out/ease-in but can also be
+      defined manually
+    </li>
+    <li>
+      <code>transition-delay</code> - Determines the delay before starting the
+      transition after it's triggered
+    </li>
+  </ul>
+  <li>
+    Multiple properties can be animated in a single line by separating them with
+    commas
+  </li>
+  <li>
+    Creates a new
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context"
+      >stacking context</a
+    >. Performance is best when transitioning opacity or transform properties
+  </li>
+  <li class="text-danger">
+    Try to avoid transitioning to or from an 'auto' value as it can cause
+    unexpected behavior
+  </li>
+</ul>
+
+<h1 id="useful_links">Useful Links</h1>
+
+<div class="list-group w-75 p-3">
+  <a
+    href="https://web.dev/animations-guide/"
+    class="list-group-item list-group-item-action"
+  >
+    <div class="d-flex flex-column">
+      <h5 class="mb-1">Animation optimisation</h5>
+      <p>Provides hints on how to keep animations performant.</p>
+      <small>Also ways of troubleshooting them.</small>
+    </div>
+  </a>
+  <a
+    href="https://dzhavat.github.io/2021/02/18/debugging-layout-repaint-issues-triggered-by-css-transition.html"
+    class="list-group-item list-group-item-action"
+  >
+    <div class="d-flex flex-column">
+      <h5 class="mb-1">Animation Troubleshooting</h5>
+      <p>
+        Steps someone took to track down the cause of an animation stuttering.
+      </p>
+    </div>
+  </a>
+  <a
+    href="https://csstriggers.com/"
+    class="list-group-item list-group-item-action"
+  >
+    <div class="d-flex flex-column">
+      <h5 class="mb-1">CSS Triggers</h5>
+      <p>
+        List of which CSS properties cause repainting or layout shifts when
+        animated.
+      </p>
+      <small
+        >Gives you a rough idea of the performance cost to animating a
+        property.</small
+      >
+    </div>
+  </a>
+  <a
+    href="https://huijing.github.io/slides/03-css-triggers/#/"
+    class="list-group-item list-group-item-action"
+  >
+    <div class="d-flex flex-column">
+      <h5 class="mb-1">CSS Triggers Overview</h5>
+      <p>Slides giving a rundown of CSS Triggers and why they're relevant.</p>
+    </div>
+  </a>
+</div>
