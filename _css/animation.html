@@ -5,6 +5,11 @@ layout: css
 
 <div id="table_of_contents" class="list-group">
   <a
+    href="#animations"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Animations</a
+  >
+  <a
     href="#transforms"
     class="list-group-item list-group-item-action list-group-item-dark"
     >Transforms</a
@@ -22,6 +27,113 @@ layout: css
 </div>
 
 <div class="d-flex flex-column">
+  <h1 id="animations">
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
+      >Animations</a
+    >
+  </h1>
+
+  <ul>
+    <li>
+      Used when you need something more complicated than a transition can
+      provide
+      <ul>
+        <li>
+          they're designed to loop; transitions can but not designed for it
+        </li>
+        <li>
+          transitions need a trigger like a pseudoclass or class being
+          added/removed via JS, animations can run immediately if they're told
+          to
+        </li>
+        <li>
+          Animations are more flexible than a the
+          <code>transition-timing-function</code> allows
+        </li>
+      </ul>
+    </li>
+    <li>
+      You define animation properties on the element to be animated, then the
+      keyframes in an @keyframes rule with the name given in
+      <code>animation-name</code>
+    </li>
+  </ul>
+
+  <h4>Animation Properties</h4>
+
+  <p>
+    Can also just use the <code>animation</code> property to set all at once.
+  </p>
+  <p>
+    However, using the individual properties lets you
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations#setting_multiple_animation_property_values"
+      >set a bunch of animations at once on the same element</a
+    >
+    using comma-separated lists of values
+  </p>
+
+  <ul>
+    <li>
+      <code>animation-name</code> - sets the name connecting this animation to
+      its keyframes
+    </li>
+    <li>
+      <code>animation-delay</code> - specifies delay between element loading and
+      animation starting and/or whether the animation should start at the
+      beginning/part way through
+    </li>
+    <li>
+      <code>animation-duration</code> - the time taken to complete a full cycle
+    </li>
+    <li>
+      <code>animation-fill-mode</code> - specifies how styles apply to the
+      element after/before the animation. e.g. will it retain the styles after
+      the animation completes? Start with the styles applied?
+    </li>
+    <li>
+      <code>animation-iteration-count</code> - how many times the animation will
+      loop. <code>infinite</code> is an accepted value
+    </li>
+    <li>
+      <code>animation-direction</code> - decides if the animation will loop or
+      jump back to the starting position at the end of a cycle
+    </li>
+    <li>
+      <code>animation-play-state</code> - can pause or start the animation
+    </li>
+    <li>
+      <code>animation-timing-function</code> - same as for transitions, sets how
+      the animation progresses through each cycle
+    </li>
+  </ul>
+
+  <h4>Keyframes</h4>
+
+  <pre>
+@keyframes animation-name {
+  from {
+    background-color: red;
+  }
+
+  to {
+    background-color: green;
+  }
+}</pre
+  >
+
+  <ul>
+    <li>
+      Can also use percentages to set keyframes at specific points other than
+      the <code>from</code> and <code>to</code> keywords
+    </li>
+    <li>
+      both <code>from</code> and <code>to</code> are optional, if you leave one
+      out the start/end state will be inferred from current styles
+    </li>
+  </ul>
+
   <h1 id="transforms">
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"
       >Transforms</a
@@ -52,7 +164,7 @@ layout: css
     </li>
   </ul>
 
-  <h2 id="transforms/2d">2D Transforms</h2>
+  <h4 id="transforms/2d">2D Transforms</h4>
 
   <ul>
     <li>
@@ -114,7 +226,7 @@ layout: css
     >, but L > R makes sense to me.
   </p>
 
-  <h2 id="transforms/3d">3D Transforms</h2>
+  <h4 id="transforms/3d">3D Transforms</h4>
 
   <p>
     Kinda the same as 2D transforms, but with the addition of perspective (and
