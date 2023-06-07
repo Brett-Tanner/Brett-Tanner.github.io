@@ -12,8 +12,11 @@ body {
   position: sticky;
   z-index: 1;
   top: 100px;
-  order: 100;
   height: min-content;
+}
+
+article {
+  margin-bottom: 50px;
 }
 
 a {
