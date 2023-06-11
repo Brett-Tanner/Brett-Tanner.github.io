@@ -1,0 +1,133 @@
+---
+title: Responsiveness
+layout: html
+---
+
+<nav id="table_of_contents" class="list-group" aria-label="Table of Contents">
+  <a
+    href="#images"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Images</a
+  >
+  <a
+    href="#"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >?</a
+  >
+  <a
+    href="#"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >??</a
+  >
+  <a
+    href="#useful_links"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Useful Links</a
+  >
+</nav>
+
+<section class="d-flex flex-column">
+  <p>
+    <code
+      >&lt;meta name="viewport" content="width=device-width,
+      initial-scale=1"&gt;</code
+    >
+    should go in your layout <code>head</code> for every site, stops mobile
+    browsers just displaying the desktop site but really zoomed out
+  </p>
+
+  <article>
+    <h1 id="images">
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images"
+        >Images</a
+      >
+    </h1>
+
+    <p>
+      <code>&lt;img&gt;</code> with <code>srcset</code> & <code>sizes</code> is
+      better when you just want different sizes of the same image for
+      performance reasons, <code>&lt;picture&gt;</code> is best when you want
+      entirely different images/aspect ratios depending on viewport.
+    </p>
+
+    <h4>
+      <code>&lt;img&gt;</code> with <code>srcset</code> & <code>sizes</code>
+    </h4>
+
+    <p>
+      Used when you want higher performance by loading an image appropriately
+      sized for the device it'll be displayed on. If you want differently sized
+      source images but your displayed image size will be the same regardless,
+      you can omit sizes.
+    </p>
+
+    <dl>
+      <dt>
+        <code>srcset</code>
+      </dt>
+      <dd>
+        Gives the browser a selection of image files to choose from. Consists of
+        an image filename, space, and the intrinsic size of the image found at
+        the filename.
+      </dd>
+      <dt>
+        <code>sizes</code>
+      </dt>
+      <dd>
+        <pre>
+            sizes="(max-width: 600px) 480px,
+            800px"
+        </pre>
+        Defines a set of media conditions and lists which image from
+        <code>srcset</code> would be best for each. Comprised of a media
+        condition, a space, and the width of the slot the image will fill if the
+        media condition is true.
+      </dd>
+    </dl>
+
+    <h4>
+      <code>&lt;picture&gt;</code>
+    </h4>
+
+    <pre>
+        &lt;picture&gt;
+            &lt;source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" &gt;
+            &lt;source media="(min-width: 800px)" srcset="elva-800w.jpg" &gt;
+            &lt;img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva" &gt;
+          &lt;/picture&gt;        
+    </pre>
+
+    <ul>
+      <li>Wraps a series of source tags and a final image tag</li>
+      <li>
+        <code>&lt;source&gt;</code> includes a media attribute which sets the
+        condition under which the image linked in the following
+        <code>srcset</code> attribute will be loaded.
+      </li>
+      <li>
+        The final <code>&lt;img&gt;</code> tag with (<code>src</code> and
+        <code>alt</code>) must be included as a fallback, or nothing will be
+        displayed by the picture tag
+      </li>
+    </ul>
+  </article>
+
+  <article>
+    <h1 id="useful_links">Useful Links</h1>
+
+    <div class="list-group w-75 p-3">
+      <a
+        href="https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/"
+      >
+        <div class="d-flex flex-column">
+          <h5 class="mb-1">CSS Tricks Responsive Images</h5>
+          <p>
+            Guide on how to display responsive images through HTML, and when to
+            use <code>srcset</code> vs <code>&lt;picture&gt;</code>.
+          </p>
+        </div>
+      </a>
+    </div>
+  </article>
+</section>
