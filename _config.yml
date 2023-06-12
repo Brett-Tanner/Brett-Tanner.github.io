@@ -33,6 +33,8 @@ plugins:
 
 # Collections
 collections:
+  astro:
+    output: true
   css:
     output: true
   git:

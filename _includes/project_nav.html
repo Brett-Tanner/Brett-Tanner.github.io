@@ -1,7 +1,8 @@
 <nav class="sticky-top" aria-label="Projects Nav">
   <a href="/">Home</a>
-  <a href="/topics/projects">Projects</a>
+  <a href="{{ site.baseurl}}/projects.html">Projects</a>
+  <a href="{{ site.baseurl}}/topics.html">Wiki</a>
   {% for project in site.projects %}
   <a href="{{ project.url }}">{{ project.title }}</a>
-  {% endfor %}
+  {% endfor %} {% include theme_toggle.html %}
 </nav>

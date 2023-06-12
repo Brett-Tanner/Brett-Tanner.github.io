@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<head>
+  <link
+    rel="icon"
+    type="image/png"
+    href="{{ site.baseurl }}/assets/images/.png"
+  />
+</head>
+
+{% include astro_nav.html %}
+<main
+  id="astro"
+  class="d-flex flex-row-reverse justify-content-between gap-3 p-3"
+>
+  {{ content }}
+</main>

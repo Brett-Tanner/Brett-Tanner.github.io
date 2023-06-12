@@ -1,5 +1,49 @@
-<nav class="sticky-top" aria-label="Site Nav">
-  {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
-  {% endfor %}
+<nav class="navbar navbar-expand-lg sticky-top" aria-label="Site Nav">
+  <div class="container-fluid">
+    <a href="{{ site.baseurl }}/index.html" class="navbar-brand"
+      ><img src="" alt="Site Logo"
+    /></a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsible_items"
+      aria-controls="collapsible_items"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="collapsible_items" class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {% if page.title == "Home" %}
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        {% endif %} {% if page.title != "Home" %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baeurl }}/projects.html"
+            >Projects</a
+          >
+        </li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/topics.html">Wiki</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+
+        {% include theme_toggle.html %}
+      </ul>
+    </div>
+  </div>
 </nav>
