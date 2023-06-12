@@ -1,6 +1,6 @@
 <nav
-  class="navbar navbar-expand-lg bg-primary d-flex align-items-center gap-3 p-3 fw-bold sticky-top"
-  aria-label="CSS Topic Nav"
+  class="navbar navbar-expand-lg d-flex align-items-center gap-3 p-3 fw-bold sticky-top"
+  aria-label="Astro Topic Nav"
 >
   <div class="container-fluid justify-content-around">
     <a href="/" class="navbar-brand"
@@ -10,13 +10,12 @@
         alt="Home"
     /></a>
     <a
-      href="/topics/css"
+      href="/topics/astro"
       class="nav-item d-flex gap-2 justify-content-center align-items-center"
       ><img
-        src="{{ site.baseurl }}/assets/images/css.png"
-        class="img-fluid w-25"
-        alt="CSS Logo"
-      />CSS</a
+        src="{{ site.baseurl }}/assets/images/astro.svg"
+        alt="Astro Icon"
+      />Astro</a
     >
     <div class="nav-item dropdown">
       <a
@@ -27,9 +26,9 @@
         >Sub-topics</a
       >
       <ul class="dropdown-menu">
-        {% for css in site.css %}
+        {% for astro in site.astro %}
         <li class="dropdown-item">
-          <a href="{{ css.url }}" class="text-black">{{ css.title }}</a>
+          <a href="{{ astro.url }}" class="text-black">{{ astro.title }}</a>
         </li>
         {% endfor %}
       </ul>
