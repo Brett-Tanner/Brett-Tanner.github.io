@@ -41,6 +41,8 @@ collections:
     output: true
   html:
     output: true
+  javascript:
+    output: true
   jekyll:
     output: true
   projects:

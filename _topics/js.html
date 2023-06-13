@@ -1,0 +1,12 @@
+---
+title: Javascript
+layout: js
+---
+
+<ul>
+  {% for topic in site.javascript %}
+  <li>
+    <h2><a href="{{ topic.url }}">{{ topic.title }}</a></h2>
+  </li>
+  {% endfor %}
+</ul>

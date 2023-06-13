@@ -1,0 +1,40 @@
+<nav
+  class="navbar navbar-expand-lg d-flex align-items-center gap-3 p-3 fw-bold sticky-top"
+  aria-label="Javascript Topic Nav"
+>
+  <div class="container-fluid justify-content-around">
+    <a href="/" class="navbar-brand"
+      ><img
+        src="{{ site.baseurl }}/assets/images/home.svg"
+        class="img-fluid"
+        alt="Home"
+    /></a>
+    <a
+      href="/topics/js"
+      class="nav-item d-flex gap-2 justify-content-center align-items-center"
+    >
+      <img
+        width="43px"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
+      />
+      Javascript</a
+    >
+    <div class="nav-item dropdown">
+      <a
+        href="#"
+        class="dropdown-toggle"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        >Sub-topics</a
+      >
+      <ul class="dropdown-menu">
+        {% for js in site.javascript %}
+        <li class="dropdown-item">
+          <a href="{{ js.url }}" class="text-black">{{ js.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% include theme_toggle.html %}
+  </div>
+</nav>
