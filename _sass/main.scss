@@ -3,9 +3,43 @@ html {
 }
 
 body {
-  color: white;
   min-width: 100vw;
   min-height: 100vh;
+}
+
+article {
+  margin-bottom: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+pre {
+  background: #1a2335;
+  border-radius: 20px;
+  padding: 10px;
+  max-width: fit-content;
+}
+
+#theme-toggle > button {
+  width: 60px;
+  height: 32px;
+}
+
+#theme-toggle .slider {
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  transition: transform 0.5s ease-out 0s;
+}
+
+#theme-toggle .slider.dark {
+  transform: translateX(27px);
+}
+
+#theme-toggle .slider.light {
+  transform: translateX(0px);
 }
 
 #table_of_contents {
@@ -15,22 +49,6 @@ body {
   z-index: 1;
   top: 100px;
   height: min-content;
-}
-
-article {
-  margin-bottom: 50px;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-pre {
-  background: #1a2335;
-  border-radius: 20px;
-  padding: 10px;
-  max-width: fit-content;
 }
 
 #html-nav {
