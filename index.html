@@ -3,16 +3,187 @@ title: Home
 layout: home
 ---
 
-<section class="hero"></section>
+<section class="hero w-100"></section>
 
-<section class="about">
+<section class="about w-100">
   <h1 id="about">About Me</h1>
+
+  <p>
+    Welcome to my portfolio site! I'm Brett, an aspiring developer with
+    professional experience in web development using Ruby on Rails, but an
+    interest in any and all areas of programming.
+  </p>
+  <p>
+    I began learning to code in February 2022 and in November 2022 joined KidsUP
+    (my current employer) as an English teacher. Shortly after joining the
+    company, I was entrusted with sole responsibility for designing, developing
+    and organising hosting for a new
+    <a href="#ku-registration">event registration site</a> to replace the
+    incumbent Google Forms/Sheets arrangement. That site is currently in
+    production use for KidsUP's biggest seasonal event of the year, with more
+    than 3 000 bookings expected by the end of the event.
+  </p>
+  <p>
+    While this trial by fire was certainly a valuable learning experience and
+    greatly accelerated my progress as a developer, I am currently exploring
+    opportunities to join a more traditionally structured development team with
+    the aim of filling the gaps left in said progress by the unusual
+    circumstances of my experience thus far. If you're interested in hiring a
+    junior full stack web developer with a proven ability to quickly learn and
+    improve under pressure, feel free to get in touch via any of the
+    communication channels found in the <a href="#contact">Contact</a> section
+    below!
+  </p>
 </section>
 
-<section class="skills">
+<section class="skills w-100">
   <h1 id="skills">Skills</h1>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a
+            class="list-group-item list-group-item-action active"
+            id="list-rails-list"
+            data-bs-toggle="list"
+            href="#list-rails"
+            role="tab"
+            aria-controls="list-rails"
+            >Ruby on Rails</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-css-list"
+            data-bs-toggle="list"
+            href="#list-css"
+            role="tab"
+            aria-controls="list-css"
+            >CSS</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-aws-list"
+            data-bs-toggle="list"
+            href="#list-aws"
+            role="tab"
+            aria-controls="list-aws"
+            >AWS</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-js-list"
+            data-bs-toggle="list"
+            href="#list-js"
+            role="tab"
+            aria-controls="list-js"
+            >Javascript</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-docs-list"
+            data-bs-toggle="list"
+            href="#list-docs"
+            role="tab"
+            aria-controls="list-docs"
+            >Documentation</a
+          >
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="list-rails"
+            role="tabpanel"
+            aria-labelledby="list-rails-list"
+          >
+            ...
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-css"
+            role="tabpanel"
+            aria-labelledby="list-css-list"
+          >
+            ...
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-aws"
+            role="tabpanel"
+            aria-labelledby="list-aws-list"
+          >
+            ...
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-js"
+            role="tabpanel"
+            aria-labelledby="list-js-list"
+          >
+            ...
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-docs"
+            role="tabpanel"
+            aria-labelledby="list-docs-list"
+          >
+            ...
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="projects">
-  <h1 id="projects"><a href="{{ site.baseurl }}/projects.html">Projects</a></h1>
+<section
+  class="d-flex flex-wrap justify-content-around align-items-center gap-3 projects w-100"
+>
+  <h1 id="projects" class="w-100">Projects</h1>
+
+  <section class="ku-registrations">
+    <div class="card card-project">
+      <a href="{{ site.baseurl }}/projects/ku_registrations.html">
+        <h4 id="ku-registration">KidsUp Registrations</h4>
+      </a>
+      <img
+        src="{{ site.baseurl }}/assets/images/projects/ku_registrations/home-splash.png"
+        alt="Registration site home splash"
+        class="img-fluid"
+        height="500"
+        width="500"
+      />
+      <a
+        href="{{ site.baseurl }}/projects/ku_registrations.html"
+        class="btn btn-primary"
+        >More Details</a
+      >
+    </div>
+  </section>
+
+  <section class="ku-wiki">
+    <div class="card card-project">
+      <a href="{{ site.baseurl }}/projects/ku_wiki.html">
+        <h4 id="ku-wiki">KidsUp Wiki</h4>
+      </a>
+      <img
+        src="{{ site.baseurl }}/assets/images/projects/ku_wiki/index.png"
+        alt="Wiki home splash"
+        class="img-fluid"
+        height="500"
+        width="500"
+      />
+      <a href="{{ site.baseurl }}/projects/ku_wiki.html" class="btn btn-primary"
+        >More Details</a
+      >
+    </div>
+  </section>
+
+  <div class="w-100">
+    <a href="{{ site.baseurl }}/projects.html" class="btn btn-primary"
+      >All Projects</a
+    >
+  </div>
 </section>

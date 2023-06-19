@@ -1,12 +1,13 @@
+// Bootsrap stuff
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+$spacer: 1rem;
+
+// Whole site
 
 html {
   scroll-padding-top: 86px;
-}
-
-body {
-  min-width: 100vw;
-  min-height: 100vh;
 }
 
 article {
@@ -63,6 +64,15 @@ main#css a:not(.list-group-item) {
 
 main#css a:hover {
   color: rgb(43, 126, 142);
+}
+
+// Projects
+
+.card-project {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: $spacer;
+  gap: $spacer;
 }
 
 // Odin exercise stuff
