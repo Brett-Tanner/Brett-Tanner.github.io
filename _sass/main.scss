@@ -10,8 +10,16 @@ html {
   scroll-padding-top: 86px;
 }
 
-article {
-  margin-bottom: 50px;
+body nav {
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+html[data-bs-theme] nav {
+  background: #ffffff40;
 }
 
 a {
@@ -54,9 +62,7 @@ pre {
   height: min-content;
 }
 
-#html-nav {
-  background: #ff7434;
-}
+// CSS
 
 main#css a:not(.list-group-item) {
   color: rgb(13, 202, 240);
@@ -64,6 +70,12 @@ main#css a:not(.list-group-item) {
 
 main#css a:hover {
   color: rgb(43, 126, 142);
+}
+
+// HTML
+
+#html-nav {
+  background: #ff7434;
 }
 
 // Projects
