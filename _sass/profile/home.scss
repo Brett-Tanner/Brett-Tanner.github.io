@@ -24,10 +24,14 @@
   }
 }
 
-.slide-up {
-  animation: slide-up 1.2s linear 0s 1 reverse forwards;
-}
+// Animations
 
-.delayed-slide-up {
-  animation: slide-up 1.2s linear 0.5s 1 reverse forwards;
+@media (prefers-reduced-motion: no-preference) {
+  .slide-up {
+    animation: slide-up 1s linear 0s 1 reverse forwards;
+  }
+
+  .delayed-slide-up {
+    animation: slide-up 1s linear 0.5s 1 reverse forwards;
+  }
 }
