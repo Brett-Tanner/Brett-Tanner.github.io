@@ -13,11 +13,11 @@ section.hero {
 
 section.hero .rgb {
   background: linear-gradient(to right, purple, blue 50%, darkgreen);
-  width: 1000dvw;
+  width: 2000dvw;
   grid-column: 1 / span 10;
   grid-row: 1 / span 10;
   @media (prefers-reduced-motion: no-preference) {
-    animation: kaleidoscope 20s ease-in-out 0s infinite alternate none;
+    animation: kaleidoscope 30s ease-in-out 0s infinite alternate none;
   }
 }
 
@@ -27,7 +27,7 @@ html[data-bs-theme="light"] section.hero .rgb {
 
 @keyframes kaleidoscope {
   100% {
-    transform: translateX(-900dvw);
+    transform: translateX(-1900dvw);
   }
 }
 
