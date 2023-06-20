@@ -1,6 +1,7 @@
 // Global Variables
 
 $spacer: 1rem;
+$grey: #ffffff40;
 
 @import "profile/home.scss", "wiki/css.scss", "wiki/html.scss";
 
@@ -13,15 +14,15 @@ html {
   scroll-padding-top: 86px;
 }
 
-body nav {
+.frosted {
   background: rgba(0, 0, 0, 0.25);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
 
-html[data-bs-theme] nav {
-  background: #ffffff40;
+html[data-bs-theme="light"] .frosted {
+  background: $grey;
 }
 
 a {
@@ -34,6 +35,17 @@ pre {
   padding: 10px;
   max-width: fit-content;
 }
+
+#table_of_contents {
+  flex: 0 1 20%;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  top: 100px;
+  height: min-content;
+}
+
+// Light/Dark theme toggle
 
 #theme-toggle > button {
   width: 60px;
@@ -55,11 +67,10 @@ pre {
   transform: translateX(0px);
 }
 
-#table_of_contents {
-  flex: 0 1 20%;
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: 1;
-  top: 100px;
-  height: min-content;
+#theme-toggle .nav-item {
+  border-right: $grey 1px solid;
+}
+
+html[data-bs-theme="light"] #theme-toggle .nav-item {
+  border-right: black 1px solid;
 }

@@ -1,5 +1,55 @@
 // Styles for the landing page
 
+// Hero
+
+section.hero {
+  margin-top: -58px;
+  overflow: hidden;
+  width: 100dvw;
+  height: 100dvh;
+  display: grid;
+  grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+}
+
+section.hero .rgb {
+  background: linear-gradient(to right, purple, blue 50%, darkgreen);
+  width: 1000dvw;
+  grid-column: 1 / span 10;
+  grid-row: 1 / span 10;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: kaleidoscope 20s ease-in-out 0s infinite alternate none;
+  }
+}
+
+html[data-bs-theme="light"] section.hero .rgb {
+  background: linear-gradient(to right, gold, lightgreen 50%, pink);
+}
+
+@keyframes kaleidoscope {
+  100% {
+    transform: translateX(-900dvw);
+  }
+}
+
+section.hero svg {
+  grid-column: 1 / span 10;
+  grid-row: 1 / span 10;
+}
+
+html[data-bs-theme="light"] section.hero svg {
+  filter: invert(1);
+}
+
+section.hero .frosted {
+  grid-column: 4 / span 4;
+  grid-row: 4 / span 4;
+  padding: $spacer;
+  @media (max-width: 992px) {
+    grid-column: 2 / span 8;
+    grid-row: 4 / span 4;
+  }
+}
+
 // Projects
 
 .card-project {
@@ -23,8 +73,6 @@
     opacity: 0;
   }
 }
-
-// Animations
 
 @media (prefers-reduced-motion: no-preference) {
   .slide-up {

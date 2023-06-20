@@ -3,12 +3,53 @@ title: Home
 layout: home
 ---
 
+<section class="hero z-n1">
+  <div class="rgb z-0"></div>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="100%"
+    height="100%"
+    class="z-1"
+  >
+    <defs>
+      <pattern
+        id="p"
+        width="250"
+        height="30"
+        patternUnits="userSpaceOnUse"
+        patternTransform="rotate(25)"
+      >
+        <path
+          id="a"
+          data-color="outline"
+          fill="none"
+          stroke="#212529"
+          stroke-width="13"
+          d="M-62.5-15C-31.3-15 0-7.5 0-7.5S31.3 0 62.5 0 125-7.5 125-7.5s31.3-7.5 62.5-7.5S250-7.5 250-7.5 281.3 0 312.5 0"
+        ></path>
+        <use xlink:href="#a" y="15"></use>
+        <use xlink:href="#a" y="30"></use>
+        <use xlink:href="#a" y="45"></use>
+      </pattern>
+    </defs>
+    <rect fill="none" width="100%" height="100%"></rect>
+    <rect fill="url(#p)" width="100%" height="100%"></rect>
+  </svg>
+  <div
+    class="frosted d-flex flex-column justify-content-center align-items-center rounded z-2"
+  >
+    <h1>Hi!</h1>
+    <h1>I'm Brett.</h1>
+    <h2>An aspiring developer living in Tokyo.</h2>
+  </div>
+</section>
+
 <section class="about w-100">
   <h1 id="about">About Me</h1>
 
   <p>
-    Welcome to my portfolio site! I'm Brett, an aspiring developer with
-    professional experience in web development using Ruby on Rails, but an
+    I have professional experience in web development with Ruby on Rails, but an
     interest in any and all areas of programming.
   </p>
   <p>
@@ -32,7 +73,6 @@ layout: home
     communication channels found in the <a href="#contact">Contact</a> section
     below!
   </p>
-  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 </section>
 
 <section class="skills w-100">
