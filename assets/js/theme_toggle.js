@@ -5,7 +5,7 @@ const html = document.documentElement;
 const getStoredTheme = () => localStorage.getItem("theme");
 const setStoredTheme = (theme) => localStorage.setItem("theme", theme);
 
-themeToggle.addEventListener("click", () => {
+slider.addEventListener("click", () => {
   slider.classList.toggle("dark");
   slider.classList.toggle("light");
   if (html.dataset.bsTheme == "dark") {

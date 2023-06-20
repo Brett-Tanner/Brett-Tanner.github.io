@@ -53,6 +53,16 @@ html[data-bs-theme="light"] nav .navbar-brand img {
   filter: invert(1);
 }
 
+nav .navbar-brand:active {
+  filter: invert(57%) sepia(24%) saturate(4247%) hue-rotate(0deg)
+    brightness(104%) contrast(105%);
+}
+
+html[data-bs-theme="light"] nav .navbar-brand:active {
+  filter: invert(62%) sepia(50%) saturate(4370%) hue-rotate(1deg)
+    brightness(104%) contrast(103%);
+}
+
 a {
   text-decoration: none;
 }
