@@ -1,0 +1,10 @@
+// Styles for the landing page
+
+// Projects
+
+.card-project {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: $spacer;
+  gap: $spacer;
+}

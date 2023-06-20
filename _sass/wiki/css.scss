@@ -1,0 +1,25 @@
+// Styles for CSS topics in the Wiki
+
+main#css a:not(.list-group-item) {
+  color: rgb(13, 202, 240);
+}
+
+main#css a:hover {
+  color: rgb(43, 126, 142);
+}
+
+// Odin exercise stuff
+
+#transition-example {
+  width: 300px;
+  transition: width 2s, height 2s, rotate 2s;
+}
+
+#transition-example:hover {
+  width: 500px;
+  height: 50px;
+}
+
+#transition-example:active {
+  rotate: 360deg;
+}
