@@ -28,10 +28,10 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .slide-up {
-    animation: slide-up 1s linear 0s 1 reverse forwards;
+    animation: slide-up 0.6s linear 0s 1 reverse forwards;
   }
 
   .delayed-slide-up {
-    animation: slide-up 1s linear 0.5s 1 reverse forwards;
+    animation: slide-up 0.6s linear 0.5s 1 reverse forwards;
   }
 }
