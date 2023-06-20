@@ -1,21 +1,26 @@
 <div
-  id="theme-toggle"
-  class="flex-grow-1 d-flex justify-content-start justify-content-lg-end align-items-center gap-2"
+  class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3"
 >
-  <div class="nav-item pe-2 pe-lg-0">
+  <div class="nav-item github d-none d-lg-block pe-2">
     <a href="https://github.com/Brett-Tanner" class="nav-link"
       ><i class="devicon-github-original fs-4"></i
     ></a>
   </div>
-  <i class="bi bi-sun-fill fs-5 nav-link p-0"></i>
-  <button
-    role="switch"
-    aria-pressed="true"
-    aria-label="Toggle dark mode"
-    aria-checked="true"
-    class="rounded-pill"
+  <div
+    id="theme-toggle"
+    class="d-flex justify-content-center align-items-center gap-2"
   >
-    <div class="slider rounded-circle bg-white h-5 w-5"></div>
-  </button>
-  <i class="bi bi-moon-stars-fill fs-6 nav-link p-0"></i>
+    <i class="bi bi-sun-fill fs-5 nav-link p-0"></i>
+    <button
+      role="switch"
+      aria-pressed="true"
+      aria-label="Toggle dark mode"
+      aria-checked="true"
+      id="theme-button"
+      class="rounded-pill"
+    >
+      <div class="slider rounded-circle h-5 w-5"></div>
+    </button>
+    <i class="bi bi-moon-stars-fill fs-6 nav-link p-0"></i>
+  </div>
 </div>

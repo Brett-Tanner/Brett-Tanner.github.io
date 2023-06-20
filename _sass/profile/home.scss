@@ -17,12 +17,12 @@ section.hero .rgb {
   grid-column: 1 / span 10;
   grid-row: 1 / span 10;
   @media (prefers-reduced-motion: no-preference) {
-    animation: kaleidoscope 30s ease-in-out 0s infinite alternate none;
+    animation: kaleidoscope 20s linear 0s infinite alternate none;
   }
 }
 
 html[data-bs-theme="light"] section.hero .rgb {
-  background: linear-gradient(to right, gold, lightgreen 50%, pink);
+  background: linear-gradient(to right, aqua, lightgreen, gold);
 }
 
 @keyframes kaleidoscope {

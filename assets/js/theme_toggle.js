@@ -1,11 +1,11 @@
-const themeToggle = document.getElementById("theme-toggle");
+const themeButton = document.getElementById("theme-button");
 const slider = document.querySelector(".slider");
 const html = document.documentElement;
 // Gets and sets chosen theme from cookies
 const getStoredTheme = () => localStorage.getItem("theme");
 const setStoredTheme = (theme) => localStorage.setItem("theme", theme);
 
-slider.addEventListener("click", () => {
+themeButton.addEventListener("click", () => {
   slider.classList.toggle("dark");
   slider.classList.toggle("light");
   if (html.dataset.bsTheme == "dark") {
