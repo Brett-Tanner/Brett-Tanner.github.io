@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg sticky-top frosted" aria-label="Site Nav">
+<nav class="navbar navbar-expand-lg fixed-top frosted" aria-label="Site Nav">
   <div class="container-fluid">
     <a href="{{ site.baseurl }}/index.html" class="navbar-brand"
       ><img
@@ -11,40 +11,65 @@
     <button
       class="navbar-toggler"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#collapsible_items"
-      aria-controls="collapsible_items"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div id="collapsible_items" class="collapse navbar-collapse">
-      <ul class="navbar-nav flex-grow-1 mb-2 mb-lg-0">
-        {% if page.title == "Home" %}
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        {% endif %} {% if page.title != "Home" %}
-        <li class="nav-item">
-          <a class="nav-link" href="{{ site.baeurl }}/projects.html"
-            >Projects</a
-          >
-        </li>
-        {% endif %}
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-        <div class="flex-grow-1"></div>
-        {% include theme_toggle.html %}
-      </ul>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div
+        class="offcanvas-body d-flex flex-lg-row flex-column justify-content-lg-end justify-content-center align-items-center"
+      >
+        <ul
+          class="navbar-nav flex-grow-1 d-flex flex-lg-row flex-column justify-content-lg-start justify-content-center align-items-center gap-2 mb-2 mb-lg-0"
+        >
+          {% if page.title == "Home" %}
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          {% endif %} {% if page.title != "Home" %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/projects.html"
+              >Projects</a
+            >
+          </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <div class="flex-grow-1"></div>
+          <div class="nav-item github d-none d-lg-flex pe-2">
+            <a href="https://github.com/Brett-Tanner" class="nav-link"
+              ><i class="devicon-github-original fs-4"></i
+            ></a>
+          </div>
+          {% include theme_toggle.html %}
+        </ul>
+      </div>
     </div>
   </div>
 </nav>

@@ -3,7 +3,6 @@
 // Hero
 
 section.hero {
-  margin-top: -58px;
   overflow: hidden;
   width: 100dvw;
   height: 100dvh;
@@ -17,7 +16,7 @@ section.hero .rgb {
   grid-column: 1 / span 10;
   grid-row: 1 / span 10;
   @media (prefers-reduced-motion: no-preference) {
-    animation: kaleidoscope 20s linear 0s infinite alternate none;
+    animation: kaleidoscope 15s linear 0s infinite alternate none;
   }
 }
 

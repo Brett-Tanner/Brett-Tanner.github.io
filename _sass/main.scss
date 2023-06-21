@@ -60,6 +60,22 @@ html[data-bs-theme="light"] nav .navbar-brand:hover img {
     brightness(104%) contrast(103%);
 }
 
+#offcanvasNavbar {
+  height: 100dvh;
+  width: 100dvw;
+  @media (max-width: 992px) {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-size: calc(1.375rem + 1.5vw);
+  }
+}
+
+html[data-bs-theme="light"] #offcanvasNavbar {
+  background: $grey;
+}
+
 a {
   text-decoration: none;
 }
