@@ -55,11 +55,11 @@ layout: home
       I have professional experience in web development with Ruby on Rails on
       AWS, and an interest in any and all areas of programming. Though I chose
       to start with web development due to plentiful high-quality free learning
-      resources I would love to get experience in other areas. For example,
-      hearing people constantly praise Rust makes me want to use it for
-      something, and developing embedded software within strict performance
-      constraints seems like it would be an interesting challenge which would
-      suit my appetite for endless optimization.
+      resources I would love to get experience in other areas. For example
+      writing a high performance application in Rust, or developing embedded
+      software for low power hardware with strict performance constraints seem
+      like challenges I would find interesting given my proclivity for endless
+      optimization.
     </p>
     <p>
       I began learning to code in February 2022 and in November 2022 joined
@@ -80,109 +80,334 @@ layout: home
       traditionally structured development team, with the aim of filling the
       gaps left in said progress by the unusual circumstances of my experience
       thus far. If you're interested in hiring a full stack web developer with a
-      proven ability to quickly learn and improve under pressure, feel free to
-      get in touch via any of the communication channels found in the
+      proven track record of quickly learning and improving under pressure, feel
+      free to get in touch via any of the communication channels found in the
       <a href="#contact">Contact</a> section below!
     </p>
   </article>
 </section>
 
-<section class="skills w-100">
-  <h1 id="skills">Skills</h1>
+<section
+  class="skills w-100 d-flex flex-column justify-content-center align-items-center gap-3 mb-3"
+>
+  <h1 id="skills w-100">Skills</h1>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-4">
-        <div class="list-group" id="list-tab" role="tablist">
-          <a
-            class="list-group-item list-group-item-action active"
-            id="list-rails-list"
-            data-bs-toggle="list"
-            href="#list-rails"
-            role="tab"
-            aria-controls="list-rails"
-            >Ruby on Rails</a
-          >
-          <a
-            class="list-group-item list-group-item-action"
-            id="list-css-list"
-            data-bs-toggle="list"
-            href="#list-css"
-            role="tab"
-            aria-controls="list-css"
-            >CSS</a
-          >
-          <a
-            class="list-group-item list-group-item-action"
-            id="list-aws-list"
-            data-bs-toggle="list"
-            href="#list-aws"
-            role="tab"
-            aria-controls="list-aws"
-            >AWS</a
-          >
-          <a
-            class="list-group-item list-group-item-action"
-            id="list-js-list"
-            data-bs-toggle="list"
-            href="#list-js"
-            role="tab"
-            aria-controls="list-js"
-            >Javascript</a
-          >
-          <a
-            class="list-group-item list-group-item-action"
-            id="list-docs-list"
-            data-bs-toggle="list"
-            href="#list-docs"
-            role="tab"
-            aria-controls="list-docs"
-            >Documentation</a
-          >
+  <div class="accordion" id="skillsAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="rails-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#rails-body"
+          aria-expanded="false"
+          aria-controls="rails-body"
+        >
+          <i class="devicon-rails-plain pe-2"></i>
+          Ruby on Rails
+          <span class="flex-grow-1"></span>
+          <span class="badge text-bg-success me-3">Confident</span>
+        </button>
+      </h2>
+      <div
+        id="rails-body"
+        class="accordion-collapse collapse"
+        aria-labelledby="rails-header"
+        data-bs-parent="#skillsAccordion"
+      >
+        <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
+          <p class="flex-grow-1">
+            Short description of what I've used rails for.
+          </p>
+          <ul class="list-group list-group-flush text-lg-end">
+            <li class="list-group-item">
+              <h6>Related Skills</h6>
+            </li>
+            <li class="list-group-item">
+              <svg
+                viewBox="0 0 196 196"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16px"
+                height="16px"
+                class="hotwire"
+              >
+                <style>
+                  html[data-bs-theme="light"] .hotwire path {
+                    fill: #212529;
+                  }
+
+                  .hotwire path {
+                    fill: #adb5bd;
+                  }
+                </style>
+                <path
+                  d="m16.38 184.8 109.46-44.72-35.27-3.31 76.73-66.59-44.33-4.16 53.9-55.53-136.52 70.03 54.89 6.44-67.32 54.38 30.07 2.97z"
+                />
+              </svg>
+              Hotwire
+            </li>
+            <li class="list-group-item">
+              <i class="devicon-ruby-plain"></i>
+              Ruby
+            </li>
+            <li class="list-group-item">
+              <i class="devicon-rspec-original"></i>
+              Rspec
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="col-8">
-        <div class="tab-content" id="nav-tabContent">
-          <div
-            class="tab-pane fade show active"
-            id="list-rails"
-            role="tabpanel"
-            aria-labelledby="list-rails-list"
-          >
-            ...
-          </div>
-          <div
-            class="tab-pane fade"
-            id="list-css"
-            role="tabpanel"
-            aria-labelledby="list-css-list"
-          >
-            ...
-          </div>
-          <div
-            class="tab-pane fade"
-            id="list-aws"
-            role="tabpanel"
-            aria-labelledby="list-aws-list"
-          >
-            ...
-          </div>
-          <div
-            class="tab-pane fade"
-            id="list-js"
-            role="tabpanel"
-            aria-labelledby="list-js-list"
-          >
-            ...
-          </div>
-          <div
-            class="tab-pane fade"
-            id="list-docs"
-            role="tabpanel"
-            aria-labelledby="list-docs-list"
-          >
-            ...
-          </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="css-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#css-body"
+          aria-expanded="false"
+          aria-controls="css-body"
+        >
+          <i class="devicon-css3-plain pe-2"></i>
+          CSS
+          <span class="flex-grow-1"></span>
+          <span class="badge text-bg-success me-3">Confident</span>
+        </button>
+      </h2>
+      <div
+        id="css-body"
+        class="accordion-collapse collapse"
+        aria-labelledby="css-header"
+        data-bs-parent="#skillsAccordion"
+      >
+        <div class="accordion-body">
+          <p>Short description of what I've used CSS for.</p>
+          <h5>Frameworks</h5>
+          <ul>
+            <li>
+              <i class="devicon-bootstrap-plain"></i>
+              Bootstrap
+            </li>
+            <li>
+              <i class="devicon-sass-original"></i>
+              Sass
+            </li>
+          </ul>
+          <h5>Projects</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="aws-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#aws-body"
+          aria-expanded="false"
+          aria-controls="aws-body"
+        >
+          <i class="devicon-amazonwebservices-original pe-2 fs-5"></i>
+          AWS
+          <span class="flex-grow-1"></span>
+          <span class="badge text-bg-info me-3">Experienced</span>
+        </button>
+      </h2>
+      <div
+        id="aws-body"
+        class="accordion-collapse collapse"
+        aria-labelledby="aws-header"
+        data-bs-parent="#skillsAccordion"
+      >
+        <div class="accordion-body">
+          <p>Short description of what I've used AWS for.</p>
+          <h5>Services</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="sociability-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#sociability-body"
+          aria-expanded="false"
+          aria-controls="sociability-body"
+        >
+          <i class="bi bi-ear-fill pe-2"></i>
+          Soft Skills
+          <span class="flex-grow-1"></span>
+          <span class="badge text-bg-info me-3">Experienced</span>
+        </button>
+      </h2>
+      <div
+        id="sociability-body"
+        class="accordion-collapse collapse"
+        aria-labelledby="sociability-header"
+        data-bs-parent="#skillsAccordion"
+      >
+        <div class="accordion-body">
+          <p>Short description of what I've used sociability for.</p>
+          <h5>Frameworks</h5>
+          <h5>Projects</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="devtools-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#devtools-body"
+          aria-expanded="false"
+          aria-controls="devtools-body"
+        >
+          <i class="bi bi-code-slash pe-2"></i>
+          Dev Tools
+          <span class="flex-grow-1"></span>
+          <span class="badge text-bg-info me-3">Experienced</span>
+        </button>
+      </h2>
+      <div
+        id="devtools-body"
+        class="accordion-collapse collapse"
+        aria-labelledby="devtools-header"
+        data-bs-parent="#skillsAccordion"
+      >
+        <div class="accordion-body">
+          <h5>Bash/ZSH</h5>
+          <p>Short description of what I've used VSCode for.</p>
+          <h5>Linux</h5>
+          <p>Short description of what I've used Linux for.</p>
+          <h5>VSCode</h5>
+          <p>Short description of what I've used VSCode for.</p>
+          <h5>WSL2</h5>
+          <p>Short description of what I've used WSL2 for.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="js-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#js-body"
+          aria-expanded="false"
+          aria-controls="js-body"
+        >
+          <i class="devicon-javascript-plain pe-2"></i>
+          Javascript
+          <span class="flex-grow-1"></span>
+          <span class="badge text-bg-warning me-3">Learning</span>
+        </button>
+      </h2>
+      <div
+        id="js-body"
+        class="accordion-collapse collapse"
+        aria-labelledby="js-header"
+        data-bs-parent="#skillsAccordion"
+      >
+        <div class="accordion-body">
+          <p>Short description of what I've used JS for.</p>
+          <ul class="list-group list-group-flush text-lg-end">
+            <li class="list-group-item">
+              <h6>Related Skills</h6>
+            </li>
+            <li class="list-group-item">
+              <svg
+                viewBox="0 0 196 196"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16px"
+                height="16px"
+                class="hotwire"
+              >
+                <path
+                  d="m16.38 184.8 109.46-44.72-35.27-3.31 76.73-66.59-44.33-4.16 53.9-55.53-136.52 70.03 54.89 6.44-67.32 54.38 30.07 2.97z"
+                />
+              </svg>
+              Hotwire
+            </li>
+            <li class="list-group-item">
+              <i class="devicon-ruby-plain"></i>
+              Ruby
+            </li>
+            <li class="list-group-item">
+              <i class="devicon-rspec-original"></i>
+              Rspec
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="git-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#git-body"
+          aria-expanded="false"
+          aria-controls="git-body"
+        >
+          <i class="devicon-git-plain pe-2"></i>
+          Git
+          <span class="flex-grow-1"></span>
+          <span class="badge text-bg-warning me-3">Learning</span>
+        </button>
+      </h2>
+      <div
+        id="git-body"
+        class="accordion-collapse collapse"
+        aria-labelledby="git-header"
+        data-bs-parent="#skillsAccordion"
+      >
+        <div class="accordion-body">
+          <p>Short description of what I've used git for.</p>
+          <h5>Frameworks</h5>
+          <h5>Projects</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="docs-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#docs-body"
+          aria-expanded="false"
+          aria-controls="docs-body"
+        >
+          <i class="bi bi-file-text-fill pe-2"></i>
+          Documentation
+          <span class="flex-grow-1"></span>
+          <span class="badge text-bg-warning me-3">Learning</span>
+        </button>
+      </h2>
+      <div
+        id="docs-body"
+        class="accordion-collapse collapse"
+        aria-labelledby="docs-header"
+        data-bs-parent="#skillsAccordion"
+      >
+        <div class="accordion-body">
+          <p>Short description of what I've used docs for.</p>
+          <h5>Frameworks</h5>
+          <ul>
+            <li>Astro</li>
+            <li>Jekyll</li>
+          </ul>
+          <h5>Projects</h5>
         </div>
       </div>
     </div>

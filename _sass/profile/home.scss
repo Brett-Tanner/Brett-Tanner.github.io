@@ -49,6 +49,15 @@ section.hero .frosted {
   }
 }
 
+// Skills
+
+#skillsAccordion {
+  width: 100%;
+  @media (min-width: 900px) {
+    width: 75%;
+  }
+}
+
 // Projects
 
 .card-project {
