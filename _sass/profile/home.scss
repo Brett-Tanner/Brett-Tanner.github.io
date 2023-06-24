@@ -5,19 +5,24 @@
 section.hero {
   overflow: hidden;
   width: 100dvw;
-  height: 100dvh;
+  height: 110dvh;
   display: grid;
-  grid-template: repeat(10, minmax(0, 1fr)) / repeat(10, minmax(0, 1fr));
+  grid-template: repeat(11, minmax(0, 1fr)) / repeat(10, minmax(0, 1fr));
+  background: linear-gradient(0deg, #212529, 25%, transparent);
 }
 
 section.hero .rgb {
   background: linear-gradient(to right, purple, blue 50%, darkgreen);
   width: 2000dvw;
   grid-column: 1 / span 10;
-  grid-row: 1 / span 10;
+  grid-row: 1 / span 11;
   @media (prefers-reduced-motion: no-preference) {
     animation: kaleidoscope 20s linear 0s infinite alternate none;
   }
+}
+
+html[data-bs-theme="light"] section.hero {
+  background: linear-gradient(0deg, #dedad6, 25%, transparent);
 }
 
 html[data-bs-theme="light"] section.hero .rgb {
@@ -32,7 +37,7 @@ html[data-bs-theme="light"] section.hero .rgb {
 
 section.hero svg {
   grid-column: 1 / span 10;
-  grid-row: 1 / span 10;
+  grid-row: 1 / span 11;
 }
 
 html[data-bs-theme="light"] section.hero svg {
