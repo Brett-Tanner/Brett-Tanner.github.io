@@ -81,8 +81,7 @@ layout: home
       gaps left in said progress by the unusual circumstances of my experience
       thus far. If you're interested in hiring a full stack web developer with a
       proven track record of quickly learning and improving under pressure, feel
-      free to get in touch via any of the communication channels found in the
-      <a href="#contact">Contact</a> section below!
+      free to get in touch via any of the communication channels in the navbar!
     </p>
   </article>
 </section>
@@ -185,20 +184,21 @@ layout: home
         aria-labelledby="css-header"
         data-bs-parent="#skillsAccordion"
       >
-        <div class="accordion-body">
-          <p>Short description of what I've used CSS for.</p>
-          <h5>Frameworks</h5>
-          <ul>
-            <li>
+        <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
+          <p class="flex-grow-1">
+            Short description of what I've used CSS for.
+          </p>
+          <ul class="list-group list-group-flush text-lg-end">
+            <li class="list-group-item"><h5>Related Skills</h5></li>
+            <li class="list-group-item">
               <i class="devicon-bootstrap-plain"></i>
               Bootstrap
             </li>
-            <li>
+            <li class="list-group-item">
               <i class="devicon-sass-original"></i>
               Sass
             </li>
           </ul>
-          <h5>Projects</h5>
         </div>
       </div>
     </div>
@@ -227,7 +227,22 @@ layout: home
       >
         <div class="accordion-body">
           <p>Short description of what I've used AWS for.</p>
-          <h5>Services</h5>
+          <ul class="list-group list-group-flush text-lg-end">
+            <li class="list-group-item"><h5>Services Used</h5></li>
+            <li class="list-group-item">
+              <img
+                src="{{ site.baseurl }}/assets/images/elastic-beanstalk.svg"
+                alt="Elastic Beanstalk Logo"
+                height="16px"
+                class="elastic-beanstalk"
+              />
+              Elastic Beanstalk
+            </li>
+            <li class="list-group-item">
+              <i class="devicon-sass-original"></i>
+              Sass
+            </li>
+          </ul>
         </div>
       </div>
     </div>
