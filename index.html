@@ -226,22 +226,71 @@ layout: home
         aria-labelledby="aws-header"
         data-bs-parent="#skillsAccordion"
       >
-        <div class="accordion-body">
-          <p>Short description of what I've used AWS for.</p>
-          <ul class="list-group list-group-flush text-lg-end">
+        <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
+          <p class="flex-grow-1">
+            Short description of what I've used AWS for.
+          </p>
+          <ul class="list-group list-group-flush">
             <li class="list-group-item"><h5>Services Used</h5></li>
-            <li class="list-group-item">
+            <li
+              class="list-group-item d-flex justify-content-center justify-content-lg-end align-items-center gap-2"
+            >
               <img
-                src="{{ site.baseurl }}/assets/images/elastic-beanstalk.svg"
+                src="{{ site.baseurl }}/assets/images/ec2.svg"
+                alt="EC2 Logo"
+                height="20px"
+              />
+              EC2
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-center justify-content-lg-end align-items-center gap-2"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/beanstalk.svg"
                 alt="Elastic Beanstalk Logo"
-                height="16px"
-                class="elastic-beanstalk"
+                height="20px"
               />
               Elastic Beanstalk
             </li>
-            <li class="list-group-item">
-              <i class="devicon-sass-original"></i>
-              Sass
+            <li
+              class="list-group-item d-flex justify-content-center justify-content-lg-end align-items-center gap-2"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/rds.svg"
+                alt="RDS Logo"
+                height="20px"
+              />
+              RDS
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-center justify-content-lg-end align-items-center gap-2"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/r53.svg"
+                alt="Route 53 Logo"
+                height="20px"
+              />
+              Route 53
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-center justify-content-lg-end align-items-center gap-2"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/s3.svg"
+                alt="S3 Logo"
+                height="20px"
+              />
+              S3
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-center justify-content-lg-end align-items-center gap-2"
+            >
+              <img
+                src="{{ site.baseurl }}/assets/images/ses.svg"
+                alt="SES Logo"
+                height="20px"
+              />
+              SES
             </li>
           </ul>
         </div>
@@ -271,9 +320,7 @@ layout: home
         data-bs-parent="#skillsAccordion"
       >
         <div class="accordion-body">
-          <p>Short description of what I've used sociability for.</p>
-          <h5>Frameworks</h5>
-          <h5>Projects</h5>
+          <p>Short description of what I've used social skills for.</p>
         </div>
       </div>
     </div>
