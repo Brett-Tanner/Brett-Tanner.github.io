@@ -55,40 +55,32 @@ layout: home
       I have professional experience in web development with Ruby on Rails on
       AWS, and an interest in any and all areas of programming. Though I chose
       to start with web development due to plentiful high-quality free learning
-      resources I would love to get experience in other areas. For example
-      writing a high performance application in Rust, or developing embedded
-      software for low power hardware with strict performance constraints seem
-      like challenges I would find interesting given my proclivity for endless
-      optimization.
+      resources, I would love to get experience in other areas.
     </p>
     <p>
       I began learning to code in February 2022 and in November 2022 joined
       KidsUP (my current employer) as an English teacher. Shortly after joining
       the company, I was entrusted with sole responsibility for designing,
-      developing and organizing hosting for a new
-      <a href="#ku-registration">event registration site</a> to replace the
-      incumbent Google Forms/Sheets arrangement. That site is currently in
-      production use for KidsUP's biggest seasonal event of the year, with more
-      than 3 000 bookings expected by the end of the event, and I have been
-      given responsibility for multiple other projects related to modernizing
-      internal systems.
+      developing and organizing hosting for a new event registration site to
+      replace the incumbent Google Forms/Sheets arrangement. That site is
+      currently in production use for KidsUP's biggest seasonal event of the
+      year, with more than 3 000 bookings expected by the end of the event.
+      Since completing that project I have been given responsibility for
+      multiple other projects related to modernizing internal systems.
     </p>
     <p>
-      This trial by fire has certainly been a valuable learning experience and
-      greatly accelerated my progress as a developer. To take the next step in
-      that progress I am currently exploring opportunities to join a more
-      traditionally structured development team, with the aim of filling the
-      gaps left in said progress by the unusual circumstances of my experience
-      thus far. If you're interested in hiring a full stack web developer with a
-      proven track record of quickly learning and improving under pressure, feel
-      free to get in touch via any of the communication channels in the navbar!
+      While solo-developing such an important site has certainly been a valuable
+      learning experience, I am currently exploring opportunities to join a more
+      traditionally structured development team. If you're interested in hiring
+      a full stack web developer with a proven track record of quickly learning
+      and improving under pressure, feel free to get in touch!
     </p>
-    <button class="btn btn-primary">Download CV</button>
+    <button class="btn btn-secondary mb-5">Download CV</button>
   </article>
 </section>
 
 <section
-  class="skills w-100 d-flex flex-column justify-content-center align-items-center gap-3 mb-3"
+  class="skills w-100 d-flex flex-column justify-content-center align-items-center gap-3 mb-5"
 >
   <h1 id="skills w-100">Skills</h1>
 
@@ -416,7 +408,9 @@ layout: home
         data-bs-parent="#skillsAccordion"
       >
         <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
-          <p class="flex-grow-1">Short description of what I've used docs for.</p>
+          <p class="flex-grow-1">
+            Short description of what I've used docs for.
+          </p>
           <ul class="list-group list-group-flush text-lg-end">
             <li class="list-group-item">
               <h6>Related Skills</h6>
@@ -430,6 +424,7 @@ layout: home
               />
               Astro
             </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -437,15 +432,28 @@ layout: home
 </section>
 
 <section
-  class="d-flex flex-wrap justify-content-around align-items-center gap-3 projects w-100"
+  class="d-flex flex-wrap justify-content-around align-items-center gap-3 projects w-100 mb-5"
 >
   <h1 id="projects" class="w-100">Projects</h1>
 
-  <article class="ku-registrations">
-    <div class="card card-project ku-registrations">
-      <a href="{{ site.baseurl }}/projects/ku_registrations.html">
-        <h4 id="ku-registration">KidsUp Registrations</h4>
-      </a>
+  <article
+    class="ku-registrations w-75 d-flex flex-column flex-lg-row justify-content-around align-items-center"
+  >
+    <div
+      class="d-flex flex-column justify-content-between align-items-center gap-3"
+    >
+      <h4 id="ku-registration" class="d-flex align-items-center gap-2">
+        KidsUp Registrations
+        <a
+          href="https://github.com/Brett-Tanner/db_prototype_v2"
+          class="link-secondary"
+          target="_blank"
+          ><i class="devicon-github-original"></i
+        ></a>
+        <a href="https://kids-up.app/" class="link-secondary" target="_blank"
+          ><i class="bi bi-globe2"></i
+        ></a>
+      </h4>
       <img
         src="{{ site.baseurl }}/assets/images/projects/ku_registrations/home-splash.png"
         alt="Registration site home splash"
@@ -453,35 +461,37 @@ layout: home
         height="500"
         width="500"
       />
-      <a
-        href="{{ site.baseurl }}/projects/ku_registrations.html"
-        class="btn btn-primary"
-        >More Details</a
-      >
+      <div class="flex-grow-1">
+        <p>
+          When I was hired, KidsUP was using a combination of Google Forms and
+          Google Sheets to handle online reservations for their seasonal events.
+          While it worked, making a large number of bookings was an incredibly
+          cumbersome experience for customers, and the Google Sheet school
+          managers used to track those registrations would take several minutes
+          to load, then a few more to become interactive.
+        </p>
+        <p>
+          I was tasked with finding a more user-friendly way for customers to
+          register for multiple activities/options and a way of displaying those
+          registrations to school managers without a several minute load time.
+          After presenting an early prototype to the company's CEO, I was given
+          the go-ahead to turn it into a full site, with the aim of having it
+          ready to use by mid-May for Summer School.
+        </p>
+        <p>
+          I was responsible for nearly all aspects of this project from start to
+          finish, including but not limited to the initial design of the
+          database, writing and testing all backend code, coding and styling the
+          views and deciding on/setting up hosting on AWS. Translations and
+          guidance on detailed business logic were provided by other members of
+          the online team, but ultimately implemented by me.
+        </p>
+        <a
+          href="{{ site.baseurl }}/projects/ku_registrations.html"
+          class="btn btn-secondary"
+          >More Details</a
+        >
+      </div>
     </div>
   </article>
-
-  <article class="ku-wiki">
-    <div class="card card-project ku-wiki">
-      <a href="{{ site.baseurl }}/projects/ku_wiki.html">
-        <h4 id="ku-wiki">KidsUp Wiki</h4>
-      </a>
-      <img
-        src="{{ site.baseurl }}/assets/images/projects/ku_wiki/index.png"
-        alt="Wiki home splash"
-        class="img-fluid"
-        height="500"
-        width="500"
-      />
-      <a href="{{ site.baseurl }}/projects/ku_wiki.html" class="btn btn-primary"
-        >More Details</a
-      >
-    </div>
-  </article>
-
-  <div class="w-100">
-    <a href="{{ site.baseurl }}/projects.html" class="btn btn-primary"
-      >All Projects</a
-    >
-  </div>
 </section>
