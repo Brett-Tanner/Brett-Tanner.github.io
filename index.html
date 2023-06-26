@@ -298,34 +298,6 @@ layout: home
     </div>
 
     <div class="accordion-item">
-      <h2 class="accordion-header" id="sociability-header">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#sociability-body"
-          aria-expanded="false"
-          aria-controls="sociability-body"
-        >
-          <i class="bi bi-ear-fill pe-2"></i>
-          Soft Skills
-          <span class="flex-grow-1"></span>
-          <span class="badge text-bg-info me-3">Experienced</span>
-        </button>
-      </h2>
-      <div
-        id="sociability-body"
-        class="accordion-collapse collapse"
-        aria-labelledby="sociability-header"
-        data-bs-parent="#skillsAccordion"
-      >
-        <div class="accordion-body">
-          <p>Short description of what I've used social skills for.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item">
       <h2 class="accordion-header" id="devtools-header">
         <button
           class="accordion-button collapsed"
@@ -348,13 +320,27 @@ layout: home
         data-bs-parent="#skillsAccordion"
       >
         <div class="accordion-body">
-          <h5>Bash/ZSH</h5>
-          <p>Short description of what I've used VSCode for.</p>
-          <h5>Linux</h5>
+          <h5>
+            <i class="devicon-bash-plain"></i>
+            Bash/ZSH
+          </h5>
+          <p>Short description of what I've used Bash for.</p>
+          <h5><i class="devicon-git-plain pe-2"></i>Git</h5>
+          <p>Short description of what I've used Git for.</p>
+          <h5>
+            <i class="devicon-linux-plain"></i>
+            Linux
+          </h5>
           <p>Short description of what I've used Linux for.</p>
-          <h5>VSCode</h5>
+          <h5>
+            <i class="devicon-vscode-plain"></i>
+            VSCode
+          </h5>
           <p>Short description of what I've used VSCode for.</p>
-          <h5>WSL2</h5>
+          <h5>
+            <i class="devicon-ubuntu-plain"></i>
+            WSL2
+          </h5>
           <p>Short description of what I've used WSL2 for.</p>
         </div>
       </div>
@@ -382,8 +368,8 @@ layout: home
         aria-labelledby="js-header"
         data-bs-parent="#skillsAccordion"
       >
-        <div class="accordion-body">
-          <p>Short description of what I've used JS for.</p>
+        <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
+          <p class="flex-grow-1">Short description of what I've used JS for.</p>
           <ul class="list-group list-group-flush text-lg-end">
             <li class="list-group-item">
               <h6>Related Skills</h6>
@@ -403,36 +389,6 @@ layout: home
               Hotwire
             </li>
           </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="git-header">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#git-body"
-          aria-expanded="false"
-          aria-controls="git-body"
-        >
-          <i class="devicon-git-plain pe-2"></i>
-          Git
-          <span class="flex-grow-1"></span>
-          <span class="badge text-bg-warning me-3">Learning</span>
-        </button>
-      </h2>
-      <div
-        id="git-body"
-        class="accordion-collapse collapse"
-        aria-labelledby="git-header"
-        data-bs-parent="#skillsAccordion"
-      >
-        <div class="accordion-body">
-          <p>Short description of what I've used git for.</p>
-          <h5>Frameworks</h5>
-          <h5>Projects</h5>
         </div>
       </div>
     </div>
@@ -459,14 +415,21 @@ layout: home
         aria-labelledby="docs-header"
         data-bs-parent="#skillsAccordion"
       >
-        <div class="accordion-body">
-          <p>Short description of what I've used docs for.</p>
-          <h5>Frameworks</h5>
-          <ul>
-            <li>Astro</li>
-            <li>Jekyll</li>
-          </ul>
-          <h5>Projects</h5>
+        <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
+          <p class="flex-grow-1">Short description of what I've used docs for.</p>
+          <ul class="list-group list-group-flush text-lg-end">
+            <li class="list-group-item">
+              <h6>Related Skills</h6>
+            </li>
+            <li class="list-group-item">
+              <img
+                src="{{ site.baseurl }}/assets/images/astro.svg"
+                alt="Astro Logo"
+                height="16px"
+                class="astro"
+              />
+              Astro
+            </li>
         </div>
       </div>
     </div>

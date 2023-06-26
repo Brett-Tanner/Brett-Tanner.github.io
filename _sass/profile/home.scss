@@ -63,6 +63,10 @@ section.hero .frosted {
   }
 }
 
+html[data-bs-theme="light"] img.astro {
+  filter: invert(1);
+}
+
 // Projects
 
 .card-project {
