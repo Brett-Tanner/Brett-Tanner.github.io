@@ -1,8 +1,85 @@
-<nav class="sticky-top" aria-label="Projects Nav">
-  <a href="/">Home</a>
-  <a href="{{ site.baseurl}}/projects.html">Projects</a>
-  <a href="{{ site.baseurl}}/topics.html">Wiki</a>
-  {% for project in site.projects %}
-  <a href="{{ project.url }}">{{ project.title }}</a>
-  {% endfor %} {% include theme_toggle.html %}
+<nav
+  class="navbar navbar-expand-lg fixed-top frosted"
+  aria-label="Projects Nav"
+>
+  <div class="container-fluid">
+    <a href="{{ site.baseurl }}/index.html" class="navbar-brand"
+      ><img
+        src="{{ site.baseurl }}/light-favicon.svg"
+        width="35"
+        class="img-fluid logo"
+        alt="Site basketball logo"
+      />
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div
+        class="offcanvas-body d-flex flex-lg-row flex-column justify-content-lg-end justify-content-center align-items-center"
+      >
+        <div
+          class="navbar-nav flex-grow-1 d-flex flex-lg-row flex-column justify-content-lg-start justify-content-center align-items-center gap-2 mb-2 mb-lg-0"
+        >
+          <div class="nav-item">
+            <a href="{{ site.baseurl}}/projects.html" class="nav-link"
+              >Projects</a
+            >
+          </div>
+          {% for project in site.projects %}
+          <div class="nav-item">
+            <a href="{{ project.url }}" class="nav-link">{{ project.title }}</a>
+          </div>
+          {% endfor %}
+          <div class="flex-grow-1"></div>
+          <div class="nav-item github d-none d-lg-flex pe-2">
+            <a
+              href="mailto:bretttanner171@gmail.com"
+              class="nav-link d-flex justify-content-center align-items-center"
+              target="_blank"
+              ><i class="bi bi-envelope fs-5"></i
+            ></a>
+            <a
+              href=""
+              class="nav-link d-flex justify-content-center align-items-center"
+              target="_blank"
+            >
+              <i class="devicon-linkedin-plain fs-5"></i>
+            </a>
+            <a
+              href="https://github.com/Brett-Tanner"
+              class="nav-link d-flex justify-content-center align-items-center"
+              target="_blank"
+              ><i class="devicon-github-original fs-4"></i
+            ></a>
+          </div>
+          {% include theme_toggle.html %}
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>

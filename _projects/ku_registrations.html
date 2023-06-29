@@ -3,4 +3,64 @@ title: Kids Up Registration Site
 layout: project
 ---
 
-<p>Baby's first project</p>
+<main class="d-flex flex-column align-items-center pt-3">
+  <div
+    class="w-75 d-flex flex-row justify-content-around"
+    id="list-tab"
+    role="tablist"
+  >
+    <a
+      class="active"
+      id="list-customer-list"
+      data-bs-toggle="list"
+      href="#list-customer"
+      role="tab"
+      aria-controls="list-customer"
+      >Customer Frontend</a
+    >
+    <a
+      class=""
+      id="list-staff-list"
+      data-bs-toggle="list"
+      href="#list-staff"
+      role="tab"
+      aria-controls="list-staff"
+      >Staff Frontend</a
+    >
+    <a
+      class=""
+      id="list-admin-list"
+      data-bs-toggle="list"
+      href="#list-admin"
+      role="tab"
+      aria-controls="list-admin"
+      >Admin Frontend</a
+    >
+  </div>
+  <div class="tab-content" id="nav-tabContent">
+    <section
+      class="tab-pane fade show active"
+      id="list-customer"
+      role="tabpanel"
+      aria-labelledby="list-customer-list"
+    >
+      customer
+    </section>
+    <section
+      class="tab-pane fade"
+      id="list-staff"
+      role="tabpanel"
+      aria-labelledby="list-staff-list"
+    >
+      staff
+    </section>
+    <section
+      class="tab-pane fade"
+      id="list-admin"
+      role="tabpanel"
+      aria-labelledby="list-admin-list"
+    >
+      admin
+    </section>
+  </div>
+</main>
