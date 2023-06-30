@@ -417,24 +417,56 @@ layout: home
             <i class="devicon-bash-plain"></i>
             Bash/ZSH
           </h5>
-          <p>Short description of what I've used Bash for.</p>
+          <p>
+            I use an M1 MacBook Air for development when working from a school,
+            and WSL2 when working from home. Between those two and needing to
+            use bash for SSH to our EC2 instance, I'm familiar with simple
+            commands like <code>tail</code>, <code>cat</code>,
+            <code>mkdir</code>, <code>rm</code>, <code>htop</code> and similar.
+            I'm also very familiar with many of Rails, <code>rbenv</code> and
+            <code>bundler</code>'s command line tools. I'm aware there's a whole
+            world of useful commands to improve my productivity by learning
+            here, and look forward to doing so in the future.
+          </p>
           <h5><i class="devicon-git-plain pe-2"></i>Git</h5>
-          <p>Short description of what I've used Git for.</p>
-          <h5>
-            <i class="devicon-linux-plain"></i>
-            Linux
-          </h5>
-          <p>Short description of what I've used Linux for.</p>
+          <p>
+            I'm very comfortable with basic Git usage like staging, committing,
+            pushing, pulling and managing branches using the command line. I
+            also have some experience with merging, rebasing, managing pull
+            requests, and using <code>git reset</code> to fix errors with a
+            detached head, though those are skills which could definitely use
+            some more development.
+          </p>
           <h5>
             <i class="devicon-vscode-plain"></i>
             VSCode
           </h5>
-          <p>Short description of what I've used VSCode for.</p>
+          <p>
+            I've used VSCode since I started learning to code, and have picked
+            up a wide variety of useful shortcuts to improve my productivity,
+            from my early discovery of multiple cursors to using
+            <kbd>shift+tab</kbd> to remove large blocks of leading whitespace
+            rather than manually creating a million cursors and mashing
+            backspace. This is another area with seemingly infinite tricks to
+            learn, and lately I've been trying to integrate a new shortcut into
+            my workflow every few days in an attempt to continue improving.
+          </p>
           <h5>
             <i class="devicon-ubuntu-plain"></i>
             WSL2
           </h5>
-          <p>Short description of what I've used WSL2 for.</p>
+          <p>
+            WSL2 has been a huge boon for my development journey, as when I
+            first started I only had access to a Windows laptop, obviously not
+            ideal given that a lot of tools/languages (like Ruby/Rails) either
+            don't run or work poorly on Windows. WSL allowed me to learn things
+            I otherwise couldn't have with just that laptop, and the (in the
+            beginning at least) complete reliance on using the command line
+            without any GUI definitely polished my skills in that regard. I can
+            now say I'm comfortable with setting up a Rails dev environment on
+            both Mac and (WSL) Ubuntu, and I actually wrote an internal wiki
+            page on the latter.
+          </p>
         </div>
       </div>
     </div>
@@ -462,7 +494,25 @@ layout: home
         data-bs-parent="#skillsAccordion"
       >
         <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
-          <p class="flex-grow-1">Short description of what I've used JS for.</p>
+          <div class="flex-grow-1">
+            <p>
+              I have some familiarity with the basics of vanilla JS (things on
+              the level of <code>.querySelectorAll</code> and the different
+              variables/comparison operators), but am a bit rusty on anything
+              beyond that after mostly using Hotwire for 6 months while working
+              on the registration site.
+            </p>
+            <p>
+              Now that I'm just making changes and adding features to that site,
+              I plan to brush up on JS and pick up The Odin Project where I left
+              off, right at the start of Advanced Javascript. Hopefully that
+              will give me a working knowledge of the finer points of the
+              language, as well as how to use React, and if all goes to plan
+              I'll leverage that freshly gained knowledge (and probably some
+              further research on Impact.js) into making an educational games
+              site for KidsUP students.
+            </p>
+          </div>
           <ul class="list-group list-group-flush text-lg-end">
             <li class="list-group-item">
               <h6>Related Skills</h6>
@@ -509,9 +559,23 @@ layout: home
         data-bs-parent="#skillsAccordion"
       >
         <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
-          <p class="flex-grow-1">
-            Short description of what I've used docs for.
-          </p>
+          <div class="flex-grow-1">
+            <p>
+              Now that the
+              <a
+                href="{{ site.baseurl }}/projects/ku_registrations.html"
+                target="_blank"
+                >KidsUP Registration Site</a
+              >
+              is in production use, I've been tasked with writing documentation
+              for it so anyone who replaces me should I leave can continue
+              adding features or fixing bugs as needed. It's early days yet as
+              I've been swamped with new feature requests/changes since the site
+              launched, but I plan to create comprehensive docs for both the
+              backend of the site and its hosting setup. They'll be presented as
+              a static site built with Astro and the Starlight template.
+            </p>
+          </div>
           <ul class="list-group list-group-flush text-lg-end">
             <li class="list-group-item">
               <h6>Related Skills</h6>
@@ -565,19 +629,19 @@ layout: home
       <div class="flex-grow-1">
         <p>
           When I was hired, KidsUP was using a combination of Google Forms and
-          Google Sheets to handle online reservations for their seasonal events.
-          While it worked, making a large number of bookings was an incredibly
-          cumbersome experience for customers, and the Google Sheet school
-          managers used to track those registrations would take several minutes
-          to load, then a few more to become interactive.
+          Sheets to handle online reservations for their seasonal events. While
+          it worked, making a large number of bookings was an incredibly
+          cumbersome experience for customers, and the Sheet school managers
+          used to track those registrations would take several minutes to load,
+          then a few more to become interactive.
         </p>
         <p>
           I was tasked with finding a more user-friendly way for customers to
           register for multiple activities/options and a way of displaying those
-          registrations to school managers without a several minute load time.
-          After presenting an early prototype to the company's CEO, I was given
-          the go-ahead to turn it into a full site, with the aim of having it
-          ready to use by mid-May for Summer School.
+          registrations to school managers in a timely manner. After presenting
+          an early prototype to the company's CEO, I was given the go-ahead to
+          turn it into a full site, with the aim of having it ready to use by
+          mid-May for Summer School.
         </p>
         <p>
           I was responsible for nearly all aspects of this project from start to
@@ -585,7 +649,9 @@ layout: home
           database, writing and testing all backend code, coding and styling the
           views and deciding on/setting up hosting on AWS. Translations and
           guidance on detailed business logic were provided by other members of
-          the online team, but ultimately implemented by me.
+          the online team, but ultimately implemented by me. The project was
+          delivered on schedule, and is currently in production use for the
+          largest seasonal event of the year.
         </p>
         <a
           href="{{ site.baseurl }}/projects/ku_registrations.html"
