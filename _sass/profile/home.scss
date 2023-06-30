@@ -64,6 +64,10 @@ section.hero .frosted {
   }
 }
 
+#skillsAccordion .list-group {
+  min-width: fit-content;
+}
+
 html[data-bs-theme="light"] img.astro {
   filter: invert(1);
 }

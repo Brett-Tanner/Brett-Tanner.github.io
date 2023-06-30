@@ -11,6 +11,15 @@ layout: project
   >
     <a
       class="active"
+      id="list-backend-list"
+      data-bs-toggle="list"
+      href="#list-backend"
+      role="tab"
+      aria-controls="list-backend"
+      >Backend</a
+    >
+    <a
+      class=""
       id="list-customer-list"
       data-bs-toggle="list"
       href="#list-customer"
@@ -38,29 +47,37 @@ layout: project
     >
   </div>
   <div class="tab-content" id="nav-tabContent">
-    <section
+    <article
       class="tab-pane fade show active"
+      id="list-backend"
+      role="tabpanel"
+      aria-labelledby="list-backend-list"
+    >
+      backend
+    </article>
+    <article
+      class="tab-pane fade"
       id="list-customer"
       role="tabpanel"
       aria-labelledby="list-customer-list"
     >
       customer
-    </section>
-    <section
+    </article>
+    <article
       class="tab-pane fade"
       id="list-staff"
       role="tabpanel"
       aria-labelledby="list-staff-list"
     >
       staff
-    </section>
-    <section
+    </article>
+    <article
       class="tab-pane fade"
       id="list-admin"
       role="tabpanel"
       aria-labelledby="list-admin-list"
     >
       admin
-    </section>
+    </article>
   </div>
 </main>
