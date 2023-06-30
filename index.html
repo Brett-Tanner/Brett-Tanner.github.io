@@ -276,9 +276,53 @@ layout: home
         data-bs-parent="#skillsAccordion"
       >
         <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
-          <p class="flex-grow-1">
-            Short description of what I've used AWS for.
-          </p>
+          <div class="flex-grow-1">
+            <p>
+              My experience with AWS began around March 2023, when my supervisor
+              informed me the I would be responsible for organizing hosting for
+              the
+              <a
+                href="{{ site.baseurl }}/projects/ku_registrations.html"
+                target="_blank"
+                >KidsUP Registration Site</a
+              >
+              in addition to my initial responsibilities. Given that my
+              experience with AWS at that point amounted to knowing that it
+              existed and was popular, what followed was definitely a bumpy and
+              error filled ride. Despite that, as I write this 4 months later,
+              the site is currently live and serving customers with no downtime
+              to date.
+            </p>
+            <p>
+              After some research I selected AWS Elastic Beanstalk as the main
+              hosting provider for the site, as it seemed to have the most
+              documentation/StackOverflow questions to help me out and AWS' free
+              tier allowed me to reduce costs for what was largely an
+              exploratory project to upper management. After wading through
+              Amazon's sea of AWS products, our site now utilizes a Postgres RDS
+              DB instance and EC2 instance managed by Elastic Beanstalk as the
+              main resources, with SES providing automated confirmation and
+              update emails, S3 storing/serving large assets like images and
+              Route 53 routing traffic from our domain the the Application Load
+              Balancer for the Elastic Beanstalk environment.
+            </p>
+            <p>
+              Getting to this stage required a lot of reading documentation, as
+              well as trial and error when documentation didn't cover the issues
+              I was experiencing. One early issue was the numerous conflicts
+              between the EC2 instance's gem versions/dependecies and those my
+              app used, as well as finding an obscure issue with one gem not
+              correctly giving permissions to its code in production. The first
+              required learning about deploy hooks in
+              <code>.ebextensions</code>, while the second was eventually solved
+              after I found an open Github issue on the gem suggesting that
+              rolling it back to a previous version resolved the permissions
+              issue. Integrating S3 and SES were significantly less frustrating,
+              but still involved processes which required a lot of reading to
+              understand how best to utilize the AWS SDK gems for those services
+              in the context of our site.
+            </p>
+          </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><h5>Services Used</h5></li>
             <li
