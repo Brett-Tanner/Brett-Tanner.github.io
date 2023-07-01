@@ -43,13 +43,43 @@
         >
           {% if page.title == "Home" %}
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <form action="#about">
+              <button
+                type="submit"
+                class="nav-link"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              >
+                About
+              </button>
+            </form>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#skills">Skills</a>
+            <form action="#skills">
+              <button
+                type="submit"
+                class="nav-link"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              >
+                Skills
+              </button>
+            </form>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
+            <form action="#projects">
+              <button
+                type="submit"
+                class="nav-link"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              >
+                Projects
+              </button>
+            </form>
           </li>
           {% endif %} {% if page.title != "Home" %}
           <li class="nav-item">
