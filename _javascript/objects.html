@@ -1,0 +1,219 @@
+---
+title: Objects
+layout: js
+---
+
+<nav id="table_of_contents" class="list-group" aria-label="Table of Contents">
+  <a
+    href="#constructors"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Object Constructors</a
+  >
+  <a
+    href="#this"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >this</a
+  >
+  <a
+    href="#?"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >?</a
+  >
+  <a
+    href="#?"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >??</a
+  >
+  <a
+    href="#useful_links"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Useful Links</a
+  >
+</nav>
+
+<section class="d-flex flex-column">
+  <article>
+    <h1 id="constructors">Object Constructors</h1>
+
+    <p>
+      Rather than creating objects with the object literal syntax, for
+      frequently used objects it's often preferable to use an object
+      constructor. A regular function which takes the values to be assigned to
+      that object's keys, but is called by prepending <code>new</code> to the
+      method call. Constructors are capitalized by convention, like classes in
+      Ruby.
+    </p>
+    <p>
+      Apparently it's possible to define constructors using
+      <code>class</code> rather than <code>function</code>, might be easier for
+      me to read/remember. But you have to define a
+      <code>constructor</code> method on the class, methods can still be
+      inherited from that constructor's prototype.
+    </p>
+    <pre>
+function Player(name, marker) {
+    this.name = name
+    this.marker = marker
+}
+const player = new Player('steve', 'X')
+console.log(player.name) // 'steve'
+    </pre>
+
+    <h3>Prototypes</h3>
+
+    <p>
+      Prototypes are another object which your object inherits from, gaining all
+      of the prototype's method and properties. You can find the prototype of an
+      object by calling <code>Object.getPrototypeOf(yourObject)</code>, which
+      will be equal to the <code>.prototype</code> property of its constructor.
+      It's generally best practice to define method for the object on the
+      prototype rather than as part of the constructor, as they are then
+      inherited rather than a new method being created in memory for each
+      object.
+    </p>
+    <p>
+      <code>.hasOwnProperty(propertyName)</code> can be called on an object to
+      see if the passed property was initially defined on that object (returns
+      true) or inherited from a parent (returns false).
+    </p>
+    <p>
+      Objects can only directly inherit from a single prototype, but you can
+      chain inheritances for (presumably) as long as you want. You can safely
+      overwrite method on the prototype by defining them on the child object,
+      the engine will just find them there an not go looking on the prototype.
+      <code>this</code> in a prototype will always refer to the object it's
+      being called on, not the one the prototype is defined on.
+    </p>
+    <p>
+      You can use <code>Object.setPrototypeOf(toBeSet, setToThis)</code> to set
+      an object's prototype. Using a constructor for inheritance can be a bad
+      idea when you're going to create a whole bunch of the object, because it
+      creates new references to the method in memory for each object and can
+      thus use a lot of memory. Prototypes alleviate this by having the method
+      all be on the prototype, so only one copy. But constructors let you use
+      closure to have "private" variables on your object.
+    </p>
+    <pre>
+function Person(name) {
+this.name = name
+}
+
+Person.prototype.sayName = function() {
+console.log(`Hello, I'm ${this.name}!`)
+}
+
+function Player(name, marker) {
+this.name = name
+this.marker = marker
+}
+
+Player.prototype.getMarker = function() {
+console.log(`My marker is '${this.marker}'`)
+}
+
+// Object.getPrototypeOf(Player.prototype) should
+// return the value of "Person.prototype" instead
+// of "Object.prototype"
+Object.getPrototypeOf(Player.prototype) // returns Object.prototype
+
+// Now make `Player` objects inherit from `Person`
+Object.setPrototypeOf(Player.prototype, Person.prototype)
+Object.getPrototypeOf(Player.prototype) // returns Person.prototype
+
+const player1 = new Player('steve', 'X')
+const player2 = new Player('also steve', 'O')
+
+player1.sayName() // Hello, I'm steve!
+player2.sayName() // Hello, I'm also steve!
+
+player1.getMarker() // My marker is 'X'
+player2.getMarker() // My marker is 'O'
+    </pre>
+    <p>
+      <code>Object.create(prototypeName)</code> will instantiate an object with
+      its prototype set to the provided prototype (prototype can just be an
+      object assigned to a variable).
+    </p>
+    <p>
+      If iterating over an object's properties, you can exclude/do other stuff
+      inherited properties using the return of
+      <code>.hasOwnProperty(property)</code>.
+    </p>
+  </article>
+
+  <article>
+    <h1 id="this">this</h1>
+
+    <h3>In Function Invocations</h3>
+
+    <p>
+      Without strict mode, refers to the global object (<code>window</code> in
+      browsers). In strict mode, will be undefined when called in a regular
+      function. If you want to change the context (and thus the value of
+      <code>this</code>), you need to specify the context, for example by
+      passing it as a parameter like the code below.
+    </p>
+    <pre>
+const numbers = {
+    numberA: 5,
+    numberB: 10,
+    sum: function() {
+        console.log(this === numbers); // => true
+    
+        function calculate() {
+        console.log(this === numbers); // => true
+        return this.numberA + this.numberB;
+        }
+    
+        // use .call() method to modify the context
+        return calculate.call(this);
+    }
+};
+numbers.sum(); // => 15
+    </pre>
+    <p>
+      Or just use an arrow function, in which case <code>this</code> would just
+      be the numbers.sum() method.
+    </p>
+
+    <h3>In Method Invocations</h3>
+
+    <p>
+      <code>this</code> is the object which owns the method. However if
+      separated from its object (for example being stored in a variable then
+      called independently), <code>this</code> will be the
+      <code>window</code> unless bound with <code>.bind(object).</code>
+    </p>
+
+    <h3>In Constructor Invocations</h3>
+
+    <p>
+      Will be the newly constructed object. Only way it won't is if you forget
+      <code>new</code> when invoking the constructor, then
+      <code>this</code> will be the window again.
+    </p>
+
+    <h3>In Indirect Invocations</h3>
+
+    <p>
+      Will be the context passed to <code>.call()</code> or
+      <code>.apply()</code>.
+    </p>
+  </article>
+
+  <article>
+    <h1 id="useful_links">Useful Links</h1>
+    <div class="list-group w-75 p-3">
+      <a
+        href="https://web.dev/animations-guide/"
+        class="list-group-item list-group-item-action"
+      >
+        <div class="d-flex flex-column">
+          <h5 class="mb-1"></h5>
+          <p></p>
+          <small></small>
+        </div>
+      </a>
+    </div>
+  </article>
+</section>
