@@ -1,0 +1,77 @@
+---
+title: Variables
+layout: js
+---
+
+<nav id="table_of_contents" class="list-group" aria-label="Table of Contents">
+  <a
+    href="#declarations"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Variable Declarations</a
+  >
+  <a
+    href="#let"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >let</a
+  >
+  <a
+    href="#?"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >?</a
+  >
+  <a
+    href="#var"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >var</a
+  >
+  <a
+    href="#useful_links"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Useful Links</a
+  >
+</nav>
+
+<section class="d-flex flex-column">
+  <article>
+    <h1 id="declarations">Variable Declarations</h1>
+
+    <dl>
+      <dt><code>const</code></dt>
+      <dd>
+        Declares an immutable variable which will raise an error if modified. Is
+        block scoped to the block it was declared in, and is not hoisted.
+        Declare memory hogging objects with this inside a block to garbage
+        collect the object when the block is done executing.
+      </dd>
+      <dt><code>let</code></dt>
+      <dd>
+        Declares a mutable variable which is block scoped and will not be
+        hoisted. Declare memory hogging objects with this inside a block to
+        garbage collect the object when the block is done executing.
+      </dd>
+      <dt><code>var</code></dt>
+      <dd>
+        Declares a mutable variable which is function scoped and will be hoisted
+        for access if declared after it's used. As it's function scoped, using
+        var in a for loop or conditional actually declares that variable in the
+        global scope, or the function scope if its within one.
+      </dd>
+    </dl>
+  </article>
+
+  <article>
+    <h1 id="useful_links">Useful Links</h1>
+    <div class="list-group w-75 p-3">
+      <a
+        href="https://web.dev/animations-guide/"
+        class="list-group-item list-group-item-action"
+      >
+        <div class="d-flex flex-column">
+          <h5 class="mb-1"></h5>
+          <p></p>
+          <small></small>
+        </div>
+      </a>
+    </div>
+  </article>
+</section>

@@ -1,0 +1,104 @@
+---
+title: Classes
+layout: js
+---
+
+<nav id="table_of_contents" class="list-group" aria-label="Table of Contents">
+  <a
+    href="#constructor"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Constructor</a
+  >
+  <a
+    href="#private"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Private Fields</a
+  >
+  <a
+    href="#inheritance"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Inheritance</a
+  >
+  <a
+    href="#static"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >static</a
+  >
+  <a
+    href="#useful_links"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Useful Links</a
+  >
+</nav>
+
+<section class="d-flex flex-column">
+  <p>
+    Classes are a type of special function which serve as templates for creating
+    objects. They can have static (class) or instance, as well as public/private
+    methods. Methods are defined on the prototype of each instance and are
+    shared by all instances. Fields can be declared without <code>let</code> or
+    <code>const</code> as they're more like properties on an object than
+    variables.
+  </p>
+
+  <article>
+    <h1 id="constructor">Constructor</h1>
+
+    <p>
+      A special method for instantiating an object created with a class. Can
+      only be one constructor in a class. You can use <code>super</code> to call
+      the constructor of a parent class.
+    </p>
+  </article>
+
+  <article>
+    <h1 id="private">Private Fields</h1>
+
+    <p>
+      Private fields are declared prefixed with a hash (#). Like in Ruby, they
+      can only be read or written within the class body. They can only be
+      declared up-front in a field declaration, and can't be created later by
+      assigning to them after the object is instantiated.
+    </p>
+  </article>
+
+  <article>
+    <h1 id="inheritance">Inheritance</h1>
+
+    <p>
+      The <code>extends</code> keyword is used to create a class as a child of
+      another constructor, like <code>class Dog extends Animal</code>. If
+      there's a constructor in the child class it needs to call
+      <code>super()</code> and pass the params required by the parent
+      constructor before using <code>this</code>. <code>super()</code> can also
+      be used to call corresponding methods of the parent class like
+      <code>super.method()</code>
+    </p>
+  </article>
+
+  <article>
+    <h1 id="static">Static</h1>
+
+    <p>
+      <code>static</code> methods/fields are the equivalent of a class
+      method/variable in Ruby; they're defined on the class itself rather than
+      an instance.
+    </p>
+  </article>
+
+  <article>
+    <h1 id="useful_links">Useful Links</h1>
+    <div class="list-group w-75 p-3">
+      <a
+        href="https://web.dev/animations-guide/"
+        class="list-group-item list-group-item-action"
+      >
+        <div class="d-flex flex-column">
+          <h5 class="mb-1"></h5>
+          <p></p>
+          <small></small>
+        </div>
+      </a>
+    </div>
+  </article>
+</section>

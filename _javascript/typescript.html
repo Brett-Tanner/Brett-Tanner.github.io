@@ -1,0 +1,639 @@
+---
+title: Typescript
+layout: js
+---
+
+<nav id="table_of_contents" class="list-group" aria-label="Table of Contents">
+  <a
+    href="#classes"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Classes</a
+  >
+  <a
+    href="#functions"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Functions</a
+  >
+  <a
+    href="#generics"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Generics</a
+  >
+  <a
+    href="#interfaces"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Interfaces</a
+  >
+  <a
+    href="#narrowing"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Narrowing</a
+  >
+  <a
+    href="#types"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Types</a
+  >
+  <a
+    href="#useful_links"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Useful Links</a
+  >
+</nav>
+
+<section class="d-flex flex-column">
+  <p>
+    <code>tsc filename</code> will compile the file to a .js file with the same
+    name. But if you wanna use your tsconfig settings, just run plain
+    <code>tsc</code> from the root directory of the project.
+  </p>
+  <dl>
+    <dt><code>--noEmitOnError</code></dt>
+    <dd>
+      Won't emit a JS file if errors are found (default behaviour is to emit
+      even if errors are present)
+    </dd>
+    <dt><code>--strict</code></dt>
+    <dd>
+      Checks for errors using strict mode and emits <code>"use strict"</code> at
+      the top of the JS file
+    </dd>
+  </dl>
+
+  <article>
+    <h1 id="classes">Classes</h1>
+
+    <p>
+      Methods on a class are handled just like functions by TS. Inside the
+      method body you <strong>must</strong> use <code>this</code> to access
+      fields and other methods.
+    </p>
+
+    <h3>Accessors</h3>
+
+    <p>TypeScript has some special inference rules for accessors:</p>
+    <ul>
+      <li>If get exists but no set, the property is automatically readonly</li>
+      <li>
+        If the type of the setter parameter is not specified, it is inferred
+        from the return type of the getter
+      </li>
+      <li>Getters and setters must have the same Member Visibility</li>
+    </ul>
+
+    <h3>Constructor</h3>
+
+    <p>
+      Constructors can be overloaded like any other function to allow multiple
+      different arrangements of parameters. They can't have type parameters,
+      those need to be defined on the outer class declaration, and can't have a
+      return type since it's always an instance of the class.
+    </p>
+
+    <h3>Fields</h3>
+    <p>
+      You can declare fields with a type annotation in the usual way, or with a
+      default value which will then lead to the type being inferred. They can
+      also be prefixed with <code>readonly</code>, which prevents them being
+      assigned outside the constructor.
+    </p>
+
+    <h3>Inheritance</h3>
+
+    <p>
+      You can check a class satisfies a particular interface using
+      <code>implements</code>. A class can implement multiple interfaces, and
+      will issue an error if any of them aren't matched.
+    </p>
+
+    <pre>
+interface Pingable {
+    ping(): void;
+}
+
+class Sonar implements Pingable {
+    ping() {
+        console.log("ping!");
+    }
+}
+
+class Ball implements Pingable {
+Class 'Ball' incorrectly implements interface 'Pingable'.
+Property 'ping' is missing in type 'Ball' but required in type 'Pingable'.
+
+    pong() {
+        console.log("pong!");
+    }
+}
+    </pre>
+
+    <p>
+      Remember an implements clause is only a check that the class can be
+      treated as the interface type, it doesn't actually change anything about
+      the class or its methods/fields. You need to apply the implements check
+      separately to the class definition and its types.
+    </p>
+
+    <p>
+      Inherited methods can be overwritten, but if they take a different form
+      than the one in the original class the original should be made available
+      through <code>super</code> with a conditional.
+    </p>
+
+    <h3>Member Visibility</h3>
+
+    <p>
+      Like other aspects of TS's type checking system, member visibility is only
+      enforced during type checking. If you want to actually make a member
+      private, use JS's # at the front of the declaration.
+    </p>
+
+    <dl>
+      <dt><code>public</code></dt>
+      <dd>
+        This is the case by default, and allows the member to be accessed from
+        anywhere. You can declare it if you want, but it's unnecessary.
+      </dd>
+      <dt><code>protected</code></dt>
+      <dd>
+        Only visible to subclasses of the class they're declared on. Note that
+        unless the derived class repeats the protected annotation, anything
+        inherited will be public by default.
+      </dd>
+      <dt><code>private</code></dt>
+      <dd>
+        Visible only to the class itself, not event derived classes. Therefore
+        their visibility can't be increased through a derived class, as not even
+        the derived class can see the member. TS allows cross-instance private
+        member access for instances of the same class.
+      </dd>
+    </dl>
+
+    <p>
+      <code>static</code> members can also use public, protected and private ,
+      and are inherited.
+    </p>
+  </article>
+
+  <article>
+    <h1 id="functions">Functions</h1>
+
+    <p>
+      You can annotate the type of a function's return value by adding the
+      annotation after the function parameters. When it's obvious from context
+      what type the params of a function should have, it'll be inferred. For
+      example, when iterating over an array of strings with
+      <code>.forEach()</code> the param's type will be inferred as string.
+    </p>
+
+    <p>
+      The simplest way to describe a function is with a function type
+      expression.
+    </p>
+    <pre>
+function greeter(fn: (a: string) => void) {
+    fn("Hello, World");
+}
+    
+function printToConsole(s: string) {
+console.log(s);
+
+// Shorter syntax with a type alias
+type GreetFunction = (a: string) => void;
+function greeter(fn: GreetFunction) {
+  // ...
+}
+}
+
+greeter(printToConsole);
+    </pre>
+
+    <p>
+      However this doesn't allow you to declare properties on the function. For
+      that, you need a call signature. Note the ':' between the params and
+      return type rather than '=>'.
+    </p>
+
+    <pre>
+type DescribableFunction = {
+    description: string;
+    (someArg: number): boolean;
+};
+    </pre>
+
+    <p>
+      If you want to declare a constructor, use the construct signature by
+      placing a <code>new</code> in front of the call signature. If the function
+      can also be called as a regular non-constructor function (like
+      <code>Date()</code>) you can have both construct and call signatures in
+      the same type/interface.
+    </p>
+  </article>
+
+  <article>
+    <h1 id="generics">Generics</h1>
+
+    <p>
+      If you want to relate the input of a function to its output, you can use
+      generic types. For example, the following will return a string if passed
+      an array of strings, number if passed an array of numbers, or undefined if
+      passed an empty array.
+    </p>
+
+    <pre>
+function firstElement< Type >(arr: Type[]): Type | undefined {
+    return arr[0];
+}
+// This can also be done with multiple parameters
+function map< Input, Output >(arr: Input[], func: (arg: Input) => Output): Output[] {
+    return arr.map(func);
+  }
+   
+  // Parameter 'n' is of type 'string'
+  // 'parsed' is of type 'number[]'
+  const parsed = map(["1", "2", "3"], (n) => parseInt(n));
+    </pre>
+
+    <p>
+      To declare a function which can be called with a wide variety of different
+      parameters, use function overloads by declaring the function with its
+      possible parameters multiple times consecutively, followed by the body of
+      the function.
+    </p>
+
+    <pre>
+function makeDate(timestamp: number): Date;
+function makeDate(m: number, d: number, y: number): Date;
+function makeDate(mOrTimestamp: number, d?: number, y?: number): Date {
+  if (d !== undefined && y !== undefined) {
+    return new Date(y, mOrTimestamp, d);
+  } else {
+    return new Date(mOrTimestamp);
+  }
+}
+    </pre>
+
+    <p>
+      The final declaration is the implementation signature, which
+      <strong>must</strong> be compatible with the overload signatures.
+    </p>
+  </article>
+
+  <article>
+    <h1 id="interfaces">Interfaces</h1>
+
+    <p>
+      Interfaces are a way to define types for an object. You can also declare
+      these with <code>type</code>, but general approach is to use
+      <code>interface</code> until you need the features provided by
+      <code>type</code>. They're declared and used like objects, with optional
+      properties marked by a ?, as follows:
+    </p>
+
+    <pre>
+interface Point {
+    x: number;
+    y: number;
+    z?: number;
+}
+
+function printCoord(pt: Point) {
+    console.log("The coordinate's x value is " + pt.x);
+    console.log("The coordinate's y value is " + pt.y);
+}
+
+printCoord({ x: 100, y: 100 });
+    </pre>
+
+    <p>
+      If you need to set default values for optional properties of an interface,
+      you can use a destructuring pattern like
+      <code>{ shape, xPos = 0, yPos = 0 }: PaintOptions</code>
+    </p>
+
+    <p>
+      Properties marked <code>readonly</code> can't be written to during type
+      checking, but its behavior at runtime won't be affected. Note this doesn't
+      make the property immutable, for example if the property itself is an
+      object you can still update its properties. You just can't directly write
+      to the <code>readonly</code> property.
+    </p>
+
+    <h3>Extending Types</h3>
+
+    <p>
+      If you have two object which share properties but one is more detailed,
+      you can extend the simpler object to create the more complex one without
+      repeating definitions like:
+    </p>
+
+    <pre>
+interface BasicAddress {
+    name?: string;
+    street: string;
+    city: string;
+    country: string;
+    postalCode: string;
+}
+    
+interface AddressWithUnit extends BasicAddress {
+    unit: string;
+}
+    </pre>
+
+    <p>
+      It's possible to extend from multiple types by separating them with a
+      comma. Alternatively, if you just want to create a new type that's a
+      combination of existing ones you can use the intersection syntax.
+    </p>
+
+    <pre>
+interface Colorful {
+    color: string;
+}
+
+interface Circle {
+    radius: number;
+}
+    
+type ColorfulCircle = Colorful & Circle;
+    </pre>
+
+    <p>
+      If you have a bunch of objects where the only difference is the types the
+      can accept, you can use
+    </p>
+
+    <pre>
+interface Box< Type > {
+    contents: Type;
+}
+    </pre>
+
+    <p>
+      then create the object with <code>let box: Box< string >;</code> or
+      whatever that desired type for that instance is. Array typing
+      (<code>string[]</code>) is an example of this, the [] is just an
+      abstraction.
+    </p>
+
+    <h3>Index Signatures</h3>
+
+    <p>
+      If you don't know what the properties of an object will be called ahead of
+      time, you can define them as a type like [index: number]. Only
+      <code>number</code>, <code>string</code>, <code>symbol</code>, template
+      strings and union types consisting of only these are acceptable here.
+    </p>
+
+    <p>
+      One issue is an index signature requires all properties to have the same
+      return value type. You can solve this by specifying the return value type
+      as a union.
+    </p>
+
+    <h3>Tuples</h3>
+
+    <p>
+      An array type that knows exactly how many elements it contains and which
+      types are at specific positions, e.g.
+      <code>type StringNumberPair = [string, number];</code>
+    </p>
+
+    <p>
+      Tuples can have optional parameters (declared with ? as usual), but they
+      must come at the end and will change the <code>length</code> type of the
+      tuple to be a union of possible lengths with/without the optional param.
+    </p>
+
+    <p>And rest elements, which must be an array or tuple type</p>
+
+    <pre>
+type StringNumberBooleans = [string, number, ...boolean[]];
+type StringBooleansNumber = [string, ...boolean[], number];
+type BooleansStringNumber = [...boolean[], string, number];
+    </pre>
+
+    <ul>
+      <li>
+        StringNumberBooleans describes a tuple whose first two elements are
+        string and number respectively, but which may have any number of
+        booleans following.
+      </li>
+      <li>
+        StringBooleansNumber describes a tuple whose first element is string and
+        then any number of booleans and ending with a number.
+      </li>
+      <li>
+        BooleansStringNumber describes a tuple whose starting elements are any
+        number of booleans and ending with a string then a number.
+      </li>
+    </ul>
+  </article>
+
+  <article>
+    <h1 id="narrowing">Narrowing</h1>
+
+    <p>
+      Obvious types of narrowing are if statements or switches with
+      <code>typeof</code>. But JS also provides <code>in</code> and
+      <code>instanceOf</code>, which can be used to select objects with a
+      property matching teh value given and see if an object is an instance of
+      another value respectively.
+    </p>
+
+    <pre>
+// in
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+type Human = { swim?: () => void; fly?: () => void };
+    
+function move(animal: Fish | Bird | Human) {
+    if ("swim" in animal) {
+    animal;
+        
+(parameter) animal: Fish | Human
+    } else {
+    animal;
+        
+(parameter) animal: Bird | Human
+    }
+}
+
+// instanceOf
+function logValue(x: Date | string) {
+    if (x instanceof Date) {
+      console.log(x.toUTCString());
+                 
+  (parameter) x: Date
+    } else {
+      console.log(x.toUpperCase());
+                 
+  (parameter) x: string
+    }
+  }
+    </pre>
+
+    <p>
+      TS allows you to check if the return of a function is one of your defined
+      types using type predicates. For example
+    </p>
+    <pre>
+function isFish(pet: Fish | Bird): pet is Fish {
+    return (pet as Fish).swim !== undefined;
+}
+    </pre>
+    <p>will check the returned value is an instance of Fish.</p>
+  </article>
+
+  <article>
+    <h1 id="types">Types</h1>
+
+    <p>
+      When creating a variable in TS, its type will be inferred from the initial
+      value is one is provided. Can be manually annotated like
+      <code>let variable: number = 42</code>; params passed to functions can be
+      annotated the same way. Optional parameters should have a '?' appended.
+    </p>
+
+    <p>
+      Type assertions allow you to specify a more or less specific version of a
+      type, by appending <code>as specificType</code> to the code.
+    </p>
+    <dl>
+      <dt><code>any</code></dt>
+      <dd>
+        Used when you don't want a particular value to raise any type-checking
+        errors. But avoid it unless really necessary, kinda defeats the point of
+        TS.
+      </dd>
+      <dt>Arrays</dt>
+      <dd>
+        You can specify the type for all elements in an array like
+        <code>number[]</code> or <code>string[]</code>.
+      </dd>
+      <dt><code>Function</code></dt>
+      <dd>
+        Can always be called, describes properties like <code>bind</code>,
+        <code>call</code> and <code>apply</code>. Has a default return type of
+        <code>any</code>, so best to specify the return type manually.
+      </dd>
+      <dt><code>null/undefined</code></dt>
+      <dd>
+        With strict mode on, which I should always have, you must check for
+        null/undefined values in the function. Putting ? in a chain will only
+        make the call if not null or undefined, it'll fizzle the chain to
+        <code>undefined</code> rather than throwing an error. Remember
+        <code>typeof null == object</code>, so you also need to check if the
+        object is truthy like
+        <code>if (object && typeof object == "object")</code>.
+      </dd>
+      <dt><code>object</code></dt>
+      <dd>
+        anything that's not a primitive, including function values. Different
+        from the empty object type and the global type <code>Object</code>
+      </dd>
+      <dt><code>string, number, boolean</code></dt>
+      <dd>Same as the primitives in JS</dd>
+      <dt><code>unknown</code></dt>
+      <dd>
+        Like <code>any</code> can represent any value, but safer because it's
+        not legal to do anything with an <code>unknown</code> value.
+      </dd>
+      <dt><code>void</code></dt>
+      <dd>
+        Represents the return value of functions which don't return a value.
+      </dd>
+    </dl>
+
+    <h3>never</h3>
+
+    <p>
+      You can use the <code>never</code> type for exhaustiveness checking, to
+      make sure you cover all possibilities in a switch or conditional. Assign a
+      variable with that type annotated in the else or default block and if that
+      block is reached an error will be raised. No error will be raised if all
+      possible cases are handled.
+    </p>
+
+    <pre>
+interface Triangle {
+    kind: "triangle";
+    sideLength: number;
+}
+    
+type Shape = Circle | Square | Triangle;
+
+function getArea(shape: Shape) {
+switch (shape.kind) {
+    case "circle":
+        return Math.PI * shape.radius ** 2;
+    case "square":
+        return shape.sideLength ** 2;
+    default:
+        const _exhaustiveCheck: never = shape;
+Type 'Triangle' is not assignable to type 'never'.
+
+    return _exhaustiveCheck;
+}
+}
+    </pre>
+
+    <p>
+      Functions can be declared to take an unlimited number of parameters of a
+      certain type with rest parameters of the form <code>...n: number[]</code>.
+      They will always use the <code>something[]</code> notation.
+    </p>
+
+    <h3>this</h3>
+
+    <p>
+      You can declare the context of <code>this</code> by annotating it like a
+      parameter in the function declaration.
+    </p>
+
+    <h3>Union Types</h3>
+
+    <p>
+      An annotation allowing one of a group of types. Types are separated by a
+      single pipe, like <code>string | number</code>. TS will then only allow
+      operators valid for both types in the union to be called on that value, so
+      if you need to call something that only works on one of the types you'll
+      need to narrow using <code>typeof</code>.
+    </p>
+
+    <p>
+      Union types can be used with literal types to create something like an
+      enum in Ruby, where only the literal types in the Union type will be
+      allowed. For example,
+      <code
+        >function printText(s: string, alignment: "left" | "right" | "center")
+        {}</code
+      >. Literal types and non-literal types can be combined in the same union.
+    </p>
+
+    <p>
+      Annotating a literal type, then later calling that function with a string
+      from an object passed can still throw an error, as that string could be
+      anything. So you have to annotate <code>as const</code> to convert the
+      whole object to literals, or appending <code>as literal</code> to the
+      property itself.
+    </p>
+  </article>
+
+  <article>
+    <h1 id="useful_links">Useful Links</h1>
+    <div class="list-group w-75 p-3">
+      <a
+        href="https://web.dev/animations-guide/"
+        class="list-group-item list-group-item-action"
+      >
+        <div class="d-flex flex-column">
+          <h5 class="mb-1"></h5>
+          <p></p>
+          <small></small>
+        </div>
+      </a>
+    </div>
+  </article>
+</section>
