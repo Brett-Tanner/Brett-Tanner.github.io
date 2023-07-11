@@ -11,15 +11,6 @@ layout: project
   >
     <a
       class="active"
-      id="list-backend-list"
-      data-bs-toggle="list"
-      href="#list-backend"
-      role="tab"
-      aria-controls="list-backend"
-      >Backend</a
-    >
-    <a
-      class=""
       id="list-customer-list"
       data-bs-toggle="list"
       href="#list-customer"
@@ -45,10 +36,49 @@ layout: project
       aria-controls="list-admin"
       >Admin Frontend</a
     >
+    <a
+      class=""
+      id="list-backend-list"
+      data-bs-toggle="list"
+      href="#list-backend"
+      role="tab"
+      aria-controls="list-backend"
+      >Backend</a
+    >
   </div>
-  <div class="tab-content" id="nav-tabContent">
+  <div class="tab-content text-center" id="nav-tabContent">
     <article
       class="tab-pane fade show active"
+      id="list-customer"
+      role="tabpanel"
+      aria-labelledby="list-customer-list"
+    >
+      <h3 id="auth">Login/Sign Up</h3>
+
+      <h3 id="children">Adding Children</h3>
+
+      <h3 id="registration">Registering for Activities</h3>
+
+      <h3 id="emails">Update/Confirmation Emails</h3>
+    </article>
+    <article
+      class="tab-pane fade"
+      id="list-staff"
+      role="tabpanel"
+      aria-labelledby="list-staff-list"
+    >
+      staff
+    </article>
+    <article
+      class="tab-pane fade"
+      id="list-admin"
+      role="tabpanel"
+      aria-labelledby="list-admin-list"
+    >
+      admin
+    </article>
+    <article
+      class="tab-pane fade"
       id="list-backend"
       role="tabpanel"
       aria-labelledby="list-backend-list"
@@ -70,30 +100,6 @@ layout: project
         <h3 id="Devise">Devise</h3>
         <h3 id="pundit">Pundit</h3>
       </section>
-    </article>
-    <article
-      class="tab-pane fade"
-      id="list-customer"
-      role="tabpanel"
-      aria-labelledby="list-customer-list"
-    >
-      customer
-    </article>
-    <article
-      class="tab-pane fade"
-      id="list-staff"
-      role="tabpanel"
-      aria-labelledby="list-staff-list"
-    >
-      staff
-    </article>
-    <article
-      class="tab-pane fade"
-      id="list-admin"
-      role="tabpanel"
-      aria-labelledby="list-admin-list"
-    >
-      admin
     </article>
   </div>
 </main>
