@@ -3,8 +3,13 @@ title: CSS Grid
 layout: css
 ---
 
-<p>Easier/more precise 3d layouts</p>
-
+<p>
+  <code
+    >grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%),
+    1fr));</code
+  >
+  is a handy property for creating a grid with responsive columns.
+</p>
 <p>
   If your grid is overflowing the container, try setting the problem columns to
   <code>minmax(0, whatever)</code>, so their min width isn't auto
