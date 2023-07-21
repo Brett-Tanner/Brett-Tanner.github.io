@@ -10,6 +10,11 @@ layout: js
     >Object Constructors</a
   >
   <a
+    href="#factories"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Factory Functions</a
+  >
+  <a
     href="#this"
     class="list-group-item list-group-item-action list-group-item-dark"
     >this</a
@@ -138,6 +143,34 @@ player2.getMarker() // My marker is 'O'
       If iterating over an object's properties, you can exclude/do other stuff
       inherited properties using the return of
       <code>.hasOwnProperty(property)</code>.
+    </p>
+  </article>
+
+  <article>
+    <h1 id="factories">Factory Functions</h1>
+
+    <p>
+      Similar to constructors, except they explicitly return the object and
+      don't use <code>new</code>/the prototype. Losing the prototype does come
+      with a performance penalty, but Apparently only when you get into the
+      thousands of objects.
+    </p>
+    <p>
+      You can use object shorthand when returning the object if you're declaring
+      it with variables whose names match the object property you're creating
+      e.g.
+    </p>
+    <pre>
+const personFactory = (name, age) => {
+  const sayHello = () => console.log('hello!');
+  return { name, age, sayHello };
+};
+    </pre>
+
+    <p>
+      A handy little trick related to this is wrapping multiple variables passed
+      to a <code>console.log()</code> in an object so they're logged with their
+      keys.
     </p>
   </article>
 
