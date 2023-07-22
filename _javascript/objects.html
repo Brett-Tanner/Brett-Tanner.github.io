@@ -150,12 +150,15 @@ player2.getMarker() // My marker is 'O'
     <h1 id="factories">Factory Functions</h1>
 
     <p>
-      Similar to constructors, except they explicitly return the object and
-      don't use <code>new</code>/the prototype. Losing the prototype does come
-      with a performance penalty, but Apparently only when you get into the
-      thousands of objects.
+      Similar to constructors (in the sense that they're also a function),
+      except they explicitly return the object and don't use
+      <code>new</code>/the prototype. Losing the prototype does come with a
+      performance penalty, but Apparently only when you get into the thousands
+      of objects.
     </p>
     <p>
+      Quick reminder that anything not explicitly returned bby the factory
+      function will be private, and thus inaccessible from outside the object.
       You can use object shorthand when returning the object if you're declaring
       it with variables whose names match the object property you're creating
       e.g.
@@ -171,6 +174,72 @@ const personFactory = (name, age) => {
       A handy little trick related to this is wrapping multiple variables passed
       to a <code>console.log()</code> in an object so they're logged with their
       keys.
+    </p>
+
+    <h3>Inheritance</h3>
+
+    <p>
+      Inheritance works by creating the parent object inside its child and
+      assigning its methods with destructuring syntax, like so:
+    </p>
+
+    <pre>
+const Person = (name) => {
+  const sayName = () => console.log(`my name is ${name}`);
+  return {sayName};
+}
+
+const Nerd = (name) => {
+  // simply create a person and pull out the sayName function with destructuring assignment syntax!
+  const {sayName} = Person(name);
+  const doSomethingNerdy = () => console.log('nerd stuff');
+  return {sayName, doSomethingNerdy};
+}
+    </pre>
+
+    <p>
+      If you want to inherit the entire parent, you can use
+      <code>Object.assign(target, ...sources)</code> instead.
+    </p>
+
+    <pre>
+const Nerd = (name) => {
+  const prototype = Person(name);
+  const doSomethingNerdy = () => console.log('nerd stuff');
+  return Object.assign({}, prototype, {doSomethingNerdy});
+}
+    </pre>
+
+    <h3>Modules</h3>
+
+    <p>
+      Modules (in this context) are a factory function which is written as an
+      IIFE and thus is immediately created/cannot be used to create multiple
+      objects. For example a calculator:
+    </p>
+
+    <pre>
+const calculator = (() => {
+  const add = (a, b) => a + b;
+  const sub = (a, b) => a - b;
+  const mul = (a, b) => a * b;
+  const div = (a, b) => a / b;
+  return {
+    add,
+    sub,
+    mul,
+    div,
+  };
+})();
+
+calculator.add(3,5); // 8
+calculator.sub(6,2); // 4
+calculator.mul(14,5534); // 77476
+    </pre>
+
+    <p>
+      Modules give you access to namespacing, so you can call calculator.add()
+      to add two numbers, then display.add() to show the result to the user.
     </p>
   </article>
 
