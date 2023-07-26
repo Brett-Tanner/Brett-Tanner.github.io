@@ -15,6 +15,11 @@ layout: js
     >Private Fields</a
   >
   <a
+    href="#getters_setters"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Getters & Setters</a
+  >
+  <a
     href="#inheritance"
     class="list-group-item list-group-item-action list-group-item-dark"
     >Inheritance</a
@@ -73,6 +78,19 @@ layout: js
       constructor before using <code>this</code>. <code>super()</code> can also
       be used to call corresponding methods of the parent class like
       <code>super.method()</code>
+    </p>
+  </article>
+
+  <article>
+    <h1 id="getters_setters">Getters and Setters</h1>
+
+    <p>
+      These are class methods which, when called from outside the class, just
+      look like accessing a property which shares their name rather than calling
+      a function. For example, the seasonal site uses a setter for both parents
+      and children to combine the two name fields into a full name which is
+      persisted in the DB. They can be defined with <code>get(){}</code> or
+      <code>set(){}</code>.
     </p>
   </article>
 
