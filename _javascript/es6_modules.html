@@ -1,0 +1,219 @@
+---
+title: ES6 Modules
+layout: js
+---
+
+<nav id="table_of_contents" class="list-group" aria-label="Table of Contents">
+  <a
+    href="#modules"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Modules</a
+  >
+  <a
+    href="#npm"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >npm</a
+  >
+  <a
+    href="#?"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >?</a
+  >
+  <a
+    href="#"
+    class="list-group-item list-group-item-action list-group-item-dark"
+  ></a>
+  <a
+    href="#useful_links"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Useful Links</a
+  >
+  <a
+    href="#webpack"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Webpack</a
+  >
+</nav>
+
+<section class="d-flex flex-column">
+  <article>
+    <h1 id="modules">Modules</h1>
+
+    <p>
+      <code>import</code> and <code>export</code> can only be used in modules,
+      and only in the top level context (no nesting in blocks or functions)
+    </p>
+
+    <p>
+      In order to use <code>export</code> or <code>import</code> the file must
+      be interpreted as module, either by including it as a script with
+      <code>type="module"</code> or by importing it in another module.
+    </p>
+
+    <h3>export</h3>
+
+    <p>
+      Declarations can be exported individually or as part of a list, so they
+      can be called directly. They can also be exported all together as a
+      default export, which you'll need to rename as part of the import.
+    </p>
+
+    <pre>
+// Exporting declarations
+export let name1, name2/*, … */; // also var
+export const name1 = 1, name2 = 2/*, … */; // also var, let
+export function functionName() { /* … */ }
+export class ClassName { /* … */ }
+export function* generatorFunctionName() { /* … */ }
+export const { name1, name2: bar } = o;
+export const [ name1, name2 ] = array;
+
+// Export list
+export { name1, /* …, */ nameN };
+export { variable1 as name1, variable2 as name2, /* …, */ nameN };
+export { variable1 as "string name" };
+export { name1 as default /*, … */ };
+
+// Default exports
+export default expression;
+export default function functionName() { /* … */ }
+export default class ClassName { /* … */ }
+export default function* generatorFunctionName() { /* … */ }
+export default function () { /* … */ }
+export default class { /* … */ }
+export default function* () { /* … */ }
+
+// Aggregating modules
+export * from "module-name";
+export * as name1 from "module-name";
+export { name1, /* …, */ nameN } from "module-name";
+export { import1 as name1, import2 as name2, /* …, */ nameN } from "module-name";
+export { default, /* …, */ } from "module-name";
+export { default as name1 } from "module-name";
+    </pre>
+
+    <p>Remember the wildcard export (*), only exports named declarations.</p>
+
+    <p>
+      You can relay values imported from another file using the
+      <code>export {} from</code> syntax like
+      <code>export { default as function1, function2 } from "bar.js";</code>.
+      This is similar to importing then exporting separately, but the import
+      won't be available in the current module.
+    </p>
+
+    <h3>import</h3>
+
+    <p>
+      There are 4 types of imports which can be used. All can be renamed using
+      <code>as</code> after the imported name in the {}.
+    </p>
+
+    <ol>
+      <li>Named import: import { export1, export2 } from "module-name";</li>
+      <ul>
+        <li></li>
+      </ul>
+      <li>Default import: import defaultExport from "module-name";</li>
+      <ul>
+        <li>
+          When you're importing a default you have to name it, so no
+          <code>as</code> needed.
+        </li>
+      </ul>
+      <li>Namespace import: import * as name from "module-name";</li>
+      <ul>
+        <li>
+          Imports all the exports from a module, namespaced to the name provided
+        </li>
+      </ul>
+      <li>Side effect import: import "module-name";</li>
+      <ul>
+        <li>
+          Doesn't actually make anything available in the current module, just
+          runs the imported code for its side-effects.
+        </li>
+      </ul>
+    </ol>
+  </article>
+
+  <article>
+    <h1 id="npm">npm</h1>
+    <dl>
+      <dt>--save</dt>
+      <dd>
+        Saves the package to your <code>nodemodules</code> and includes it in
+        <code>package.json</code> as a dependency
+      </dd>
+      <dt>--save-dev</dt>
+      <dd>
+        Same as <code>--save</code> but lists it as a development dependency
+        instead, won't be loaded in production.
+      </dd>
+      <dt>npm init -y</dt>
+      <dd>Sets up a <code>package.json</code> with the default values</dd>
+      <dt>npx packageName</dt>
+      <dd>
+        Runs the binary for the specified package, e.g.
+        <code>npx webpack</code> to bundle your code with webpack
+      </dd>
+    </dl>
+
+    <p>
+      You can create custom scripts to be run with npm like
+      <code>npm run test</code> by adding them to <code>package.json</code> like
+      so
+    </p>
+
+    <pre>
+"scripts": {      
+  "test": "echo \"Error: no test specified\" && exit 1",  
+  "build": "webpack --progress --mode=production",  
+  "watch": "webpack --progress --watch" 
+},  
+    </pre>
+  </article>
+
+  <article>
+    <h1 id="webpack">Webpack</h1>
+
+    <p>
+      Manually bundle your JS with
+      <code>./node_modules/.bin/webpack index.js --mode=development</code>, or
+      <code>--mode=production</code> if you don't care about it being
+      human-readable.
+    </p>
+
+    <p>
+      Or just <code>./node_modules/.bin/webpack</code> with the following
+      <code>webpack.config.js</code> file in your project root
+    </p>
+
+    <pre>
+module.exports = {  
+  mode: 'development',  
+  entry: './index.js',  
+  output: {  
+    filename: 'main.js',  
+    publicPath: 'dist'  
+  }  
+};
+    </pre>
+  </article>
+
+  <article>
+    <h1 id="useful_links">Useful Links</h1>
+    <div class="list-group w-75 p-3">
+      <a
+        href="https://web.dev/animations-guide/"
+        class="list-group-item list-group-item-action"
+      >
+        <div class="d-flex flex-column">
+          <h5 class="mb-1"></h5>
+          <p></p>
+          <small></small>
+        </div>
+      </a>
+    </div>
+  </article>
+</section>
