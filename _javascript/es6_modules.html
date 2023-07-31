@@ -177,6 +177,8 @@ export { default as name1 } from "module-name";
   <article>
     <h1 id="webpack">Webpack</h1>
 
+    <h4>Bundling JS</h4>
+
     <p>
       Manually bundle your JS with
       <code>./node_modules/.bin/webpack index.js --mode=development</code>, or
@@ -199,6 +201,120 @@ module.exports = {
   }  
 };
     </pre>
+
+    <h4>Bundling CSS</h4>
+
+    <p>
+      First, you'll need to include <code>style-loader</code> and
+      <code>css-loader</code> in your webpack.config module/rules.
+      <code>style-loader</code> should be first in the <code>use:</code> key, as
+      modules are chainable and executed in reverse order. The
+      <code>test:</code> key should be a regex ensuring all CSS files are
+      processed by those modules.
+    </p>
+
+    <pre>
+module: {
+  rules: [
+    {
+      test: /\.css$/i,
+      use: ["style-loader", "css-loader"],
+    },
+  ],
+},
+    </pre>
+
+    <p>
+      Once bundled, you can import the bundled CSS to the JS module it's
+      required by with <code>import './style.css'.</code>. When that module is
+      run a style tag will be dynamically inserted with the stringified CSS.
+      Note that CSS should usually be minified for production.
+    </p>
+
+    <h4>Bundling Assets</h4>
+
+    <p>
+      Webpack natively supports bundling images, so no need to include new
+      modules. Just add a rule with <code>test:</code> set to a regex matching
+      the assets you want bundled, and <code>type:</code> set to
+      'assets/resource'. Then you can import the image where needed in your JS
+      with <code>import MyImage from './my-image.png'</code>, which will add the
+      processed image to your /dist folder and make it available in your script
+      as the MyImage variable.
+    </p>
+
+    <p>
+      Fonts and data (like JSON/YML) can be imported in a similar fashion,
+      though data other than JSON will require a module to parse. The data will
+      be available in parsed form as the variable you imported it as.
+    </p>
+
+    <h4>Development</h4>
+
+    <p>
+      <a href="https://webpack.js.org/guides/development/#using-source-maps"
+        >Sourcemaps</a
+      >
+      make debugging your code easier by allowing you to trace back to the
+      original file bundled code came from. For development it's fine to just
+      add <code>devtool: 'inline-source-map'</code> to your webpack.config, but
+      apparently that's not appropriate for production.
+    </p>
+
+    <p>
+      Running webpack with the <code>--watch</code> flag causes it to watch the
+      dependency tree for changes and recompile when one occurs. However the
+      <code>--watch</code> flag won't automatically reload the page for you, for
+      that you need <code>webpack-dev-server</code>.
+    </p>
+
+    <p>
+      <code>webpack-dev-server</code> requires some changes to your
+      webpack.config, namely
+    </p>
+    <pre>
+devServer: {
+
+  static: './dist',
+
+},
+optimization: {
+
+  runtimeChunk: 'single',
+
+},
+    </pre>
+    <p>
+      which will serve the files in your ./dist directory on
+      <code>localhost:8080</code>. It can be run with
+      <code>webpack serve --open</code>.
+    </p>
+
+    <p>
+      Finally, you can use <code>webpack-ev-middleware</code> as a go-between if
+      you'd like to use your own server, but I can look into that later if
+      necessary.
+    </p>
+
+    <h4>Output Management</h4>
+
+    <p>
+      If you'd like to import multiple files and also output them as separate
+      files, you can add the new file as a key/value pair to your
+      <code>entry:</code> hash in webpack.config, and set the
+      <code>filename:</code> key to a dynamically generated path like
+      <code>filename: '[name].bundle.js'</code>
+    </p>
+
+    <p>
+      You can add <code>clean: true</code> to the web.config output hash to
+      clean the ./dist folder with each recompilation.
+    </p>
+
+    <p>
+      <code>html-webpack-plugin</code> can generate your HTML for you as well
+      (or at least add the script/css tags automatically for you).
+    </p>
   </article>
 
   <article>
