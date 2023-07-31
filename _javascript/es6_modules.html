@@ -269,8 +269,8 @@ module: {
     </p>
 
     <p>
-      <code>webpack-dev-server</code> requires some changes to your
-      webpack.config, namely
+      <code>webpack-dev-server</code> needs to be downloaded as an npm package
+      and requires some changes to your webpack.config, namely
     </p>
     <pre>
 devServer: {
@@ -314,6 +314,34 @@ optimization: {
     <p>
       <code>html-webpack-plugin</code> can generate your HTML for you as well
       (or at least add the script/css tags automatically for you).
+    </p>
+
+    <h4>Typescript Support</h4>
+
+    <p>
+      Install the TS compiler and <code>ts-loader</code>, then modify the
+      <code>modules</code> hash of your webpack config with
+    </p>
+
+    <pre>
+module: {
+  rules: [
+    {
+      test: /\.tsx?$/,
+      use: 'ts-loader',
+      exclude: /node_modules/,
+    },
+  ],
+},
+resolve: {
+  extensions: ['.tsx', '.ts', '.js'],
+},
+    </pre>
+
+    <p>
+      and remember to update the entry to a .ts file. If you want to take
+      advantage of sourcemaps, you'll need to set
+      <code>sourceMap: true</code> in your tsconfig.
     </p>
   </article>
 
