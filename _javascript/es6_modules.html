@@ -316,6 +316,57 @@ optimization: {
       (or at least add the script/css tags automatically for you).
     </p>
 
+    <h4>
+      <a href="https://tailwindcss.com/docs/installation/using-postcss"
+        >Tailwind Support</a
+      >
+    </h4>
+
+    <p>
+      First install the required loaders with
+      <code
+        >npm install -D css-loader postcss postcss-loader
+        postcss-preset-env</code
+      >
+      then use them in your webpack.config and set
+      <code>mode: production</code>.
+    </p>
+
+    <p>
+      Generate tailwind.config.js by running npx tailwindcss init and add
+      './dist/*.{html,js}' to the <code>content</code> array (THE LACK OF
+      WHITESPACE BETWEEN COMMAS IS IMPORTANT). Tailwind CSS will purge all
+      styles which are not used by the files specified in the purge array.
+    </p>
+
+    <p>In your webpack.config, add</p>
+
+    <pre>
+{
+  test: /\.css$/i,
+  include: path.resolve(__dirname, "src"),
+  use: ["style-loader", "css-loader", "postcss-loader"],
+}
+    </pre>
+
+    <p>Create <code>postcss.config.js and add</code></p>
+
+    <pre>
+module.exports = {
+  plugins: { "postcss-preset-env": {}, tailwindcss: {}, autoprefixer: {} },
+};
+    </pre>
+
+    <p>
+      Finally, make sure you're setting the environment appropriately in your
+      package.json scripts:
+    </p>
+
+    <pre>
+"build": "export NODE_ENV=production && webpack",
+"dev": "NODE_ENV=development webpack serve --open",
+    </pre>
+
     <h4>Typescript Support</h4>
 
     <p>
@@ -342,6 +393,12 @@ resolve: {
       and remember to update the entry to a .ts file. If you want to take
       advantage of sourcemaps, you'll need to set
       <code>sourceMap: true</code> in your tsconfig.
+    </p>
+
+    <p>
+      To import images to your TS files, you'll need to create an
+      <code>import-{ext}.d.ts</code> file which contains
+      <code>declare module "*.{ext}"</code>.
     </p>
   </article>
 
