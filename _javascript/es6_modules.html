@@ -333,9 +333,10 @@ optimization: {
     </p>
 
     <p>
-      Generate tailwind.config.js by running npx tailwindcss init and add
-      './dist/*.{html,js}' to the <code>content</code> array (THE LACK OF
-      WHITESPACE BETWEEN COMMAS IS IMPORTANT). Tailwind CSS will purge all
+      Generate tailwind.config.js by running npx tailwindcss init and set
+      <code>['./dist/*.html', './src/*.ts']</code> as the
+      <code>content</code> array (THE LACK OF WHITESPACE BETWEEN COMMAS IS
+      IMPORTANT WHEN YOU WANT MULTIPLE FILE TYPES). Tailwind CSS will purge all
       styles which are not used by the files specified in the purge array.
     </p>
 
@@ -365,6 +366,38 @@ module.exports = {
     <pre>
 "build": "export NODE_ENV=production && webpack",
 "dev": "NODE_ENV=development webpack serve --open",
+    </pre>
+
+    <p>
+      And finally finally, copying this into my VSCode settings is what got the
+      intellisense working in .ts files:
+    </p>
+
+    <pre>
+"tailwindCSS.includeLanguages": {
+  "javascript": "javascript"
+},
+"tailwindCSS.experimental.classRegex": [
+
+  ["classList\\.add\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["classList\\.contains\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["classList\\.entries\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["classList\\.forEach\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["classList\\.item\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["classList\\.keys\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["classList\\.length\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["classList\\.remove\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["classList\\.replace\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["classList\\.supports\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["classList\\.toggle\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["classList\\.value\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["classList\\.values\\(([^)]*)", "['\"`]([^'\"`\\s]*)['\"`]"],
+  ["className\\s*=\\s*['\"`]([^'\"`]*)['\"`]"]
+],
+"editor.quickSuggestions": {
+  "strings": true
+},
+"editor.inlineSuggest.enabled": true
     </pre>
 
     <h4>Typescript Support</h4>

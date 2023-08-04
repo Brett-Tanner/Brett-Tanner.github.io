@@ -45,6 +45,18 @@ layout: html
         for anything users are meant to click, even if it doesn't necessarily
         look like a button
       </dd>
+      <dt><code>datalist</code></dt>
+      <dd>
+        An element wrapping a set of options, can be attached to an input to
+        specify the allowable options for that input/provide suggestions.
+      </dd>
+      <dt><code>details</code></dt>
+      <dd>
+        A dropdown which wraps a summary element (displayed when the dropdown is
+        closed) and its content.
+      </dd>
+      <dt><code>dialog</code></dt>
+      <dd>Kinda like a modal, should be used as the base for custom modals.</dd>
       <dt><code>&lt;dl&gt;</code></dt>
       <dd>
         should be used for lists of terms and their definitions. It contains
@@ -70,8 +82,24 @@ layout: html
       </ul>
       <dt><code>&lt;main&gt;</code></dt>
       <dd>The dominant content of the body element</dd>
+      <dt><code>mark</code></dt>
+      <dd>
+        Like a <code>span</code> which highlights text, some browsers haev
+        default styles.
+      </dd>
+      <dt><code>meter</code></dt>
+      <dd>
+        Provides a little bar thingy with attributes determining how much of it
+        is filled/what color the fill should be.
+      </dd>
       <dt><code>&lt;nav&gt;</code></dt>
       <dd>Provides links, either within the page or to other pages</dd>
+      <dt><code>progress</code></dt>
+      <dd>
+        A progress bar! Value element can be set to control how much is filled
+        or left indeterminate. Color will follow the system's accent color by
+        default, or can be set with <code>accent-color</code> css property.
+      </dd>
       <dt><code>&lt;table&gt;</code></dt>
       <dd>
         for anything that would be presented in a table, no stacking divs like I
