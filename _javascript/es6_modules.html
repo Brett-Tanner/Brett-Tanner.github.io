@@ -177,6 +177,64 @@ export { default as name1 } from "module-name";
   <article>
     <h1 id="webpack">Webpack</h1>
 
+    <ol>
+      <li>Create a new npm project with <code>npm init -y</code></li>
+      <li>
+        Install webpack and its server/cli with
+        <code>npm install webpack webpack-cli webpack-dev-server -D</code>
+        <ul>
+          <li>
+            Also add
+            <code
+              >tailwindcss ts-loader autoprefixer style-loader css-loader
+              postcss postcss-loader postcss-preset-env</code
+            >
+            if starting a standard project
+          </li>
+        </ul>
+      </li>
+      <li>
+        Remove the main key, and add "private": true unless you're planning on
+        developing an npm package.
+      </li>
+      <li>
+        Add my custom scripts
+        <pre>
+          "build": "export NODE_ENV=production && webpack",
+          "dev": "NODE_ENV=development webpack serve --open",
+          "pages": "git subtree push --prefix dist origin gh-pages"
+        </pre>
+      </li>
+      <li>
+        Add
+        <a
+          href="https://github.com/Brett-Tanner/odin-restaurant-page/blob/main/webpack.config.js"
+          >webpack.config.js</a
+        >,
+        <a
+          href="https://github.com/Brett-Tanner/odin-restaurant-page/blob/main/postcss.config.js"
+          >postcss.config.js</a
+        >
+        and
+        <a
+          href="https://github.com/Brett-Tanner/odin-restaurant-page/blob/main/tsconfig.json"
+          >ts.config.json</a
+        >
+        then run <code>npx tailwindcss init</code> to create tailwind's config
+        file
+      </li>
+      <li>
+        Finally, add the tailwind declarations to your main CSS file
+        <pre>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+        </pre>
+        and remember to import it in at least one of your .ts files or webpack
+        won't bundle it.
+      </li>
+    </ol>
+
     <h4>Bundling JS</h4>
 
     <p>
