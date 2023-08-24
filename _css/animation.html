@@ -25,6 +25,11 @@ layout: css
     >Triggering Animations</a
   >
   <a
+    href="#webapi"
+    class="list-group-item list-group-item-action list-group-item-dark"
+    >Web Animation API</a
+  >
+  <a
     href="#useful_links"
     class="list-group-item list-group-item-action list-group-item-dark"
     >Useful Links</a
@@ -473,5 +478,63 @@ layout: css
         </div>
       </a>
     </div>
+  </article>
+
+  <article>
+    <h1 id="webapi"><a href="">Web Animation API</a></h1>
+
+    <p>
+      I just came across this briefly and made some quick notes, there's a lot
+      more you can do here like pause or speed up animations
+    </p>
+
+    <h4>Element Methods</h4>
+
+    <dl>
+      <dt>
+        <code
+          ><a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Element/animate"
+            >animate()</a
+          ></code
+        >
+      </dt>
+      <dd>
+        Takes two arguments, a keyframes object and an options object. Starts an
+        animation based on the keyframes, and returns that animation. You can
+        attach event listeners to the animation, listening for its events like
+        <code>finish</code> when it ends or remove when it's automatically
+        <code>removed</code>
+      </dd>
+      <dt><code>getAnimations()</code></dt>
+      <dd>Retrieves all current and future animations on an element</dd>
+    </dl>
+
+    <h4><a href="">Keyframes</a></h4>
+
+    <p>
+      Keyframes can be passed to <code>animate()</code> in two ways; as an array
+      of keyframe objects or as a keyframe object whose keys are arrays of
+      values to iterate over.
+    </p>
+
+    <h5>Keyframe object</h5>
+
+    <pre>
+{
+  opacity: [0, 1],
+  color: ["#fff", "#000"],
+}
+    </pre>
+
+    <h5>Array of Keyframe Objects</h5>
+
+    <pre>
+[
+  { opacity: 1, easing: "ease-out" },
+  { opacity: 0.1, easing: "ease-in" },
+  { opacity: 0 },
+]
+    </pre>
   </article>
 </section>
