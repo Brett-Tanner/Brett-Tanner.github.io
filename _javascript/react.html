@@ -5,9 +5,10 @@ layout: js
 
 <nav id="table_of_contents" class="list-group" aria-label="Table of Contents">
   <a
-    href="#"
+    href="#components"
     class="list-group-item list-group-item-action list-group-item-dark"
-  ></a>
+    >Components</a
+  >
   <a
     href="#"
     class="list-group-item list-group-item-action list-group-item-dark"
@@ -17,9 +18,9 @@ layout: js
     class="list-group-item list-group-item-action list-group-item-dark"
   ></a>
   <a
-    href="#?"
+    href="#jsx"
     class="list-group-item list-group-item-action list-group-item-dark"
-    >?</a
+    >JSX</a
   >
   <a
     href="#?"
@@ -35,11 +36,113 @@ layout: js
 
 <section class="d-flex flex-column">
   <article>
-    <h1 id=""></h1>
+    <h1 id="components">Components</h1>
+
+    <p>
+      Components are self contained functions which return chunks of HTML. They
+      can be passed props, and render other components inside them. The App
+      component is the root component of the app which all others are rendered
+      inside. The component function should be capitalized.
+    </p>
+
+    <p>
+      Returning <code>null</code>, <code>undefined</code> and false will cause
+      nothing to be rendered, while other falsy values like 0 or empty strings
+      will be rendered.
+    </p>
+
+    <h3>Hooks</h3>
+
+    <p>
+      Always start with 'use'. Can only be called from the top level of a
+      functional component, and not within a loop or conditional.
+    </p>
+
+    <h4 class="font-bold">STATE SHOULD ALWAYS BE IMMUTABLE</h4>
+
+    <p>
+      If you're updating an object or array in state, separate it out with the
+      spread operator and overwrite the stuff you want to change, then return
+      the new object rather than editing the existing one.
+    </p>
+
+    <p>
+      If you call setState(state + 1) twice in a row, it'll only increment by 1
+      since the stored state is used for both (and replaced, not updated). If
+      you want to update it, use an updater callback like
+      <code
+        >setPerson((prevPerson) => ({ ...prevPerson, age: prevPerson.age + 1
+        }));</code
+      >
+    </p>
+
+    <h3>Keys</h3>
+
+    <p>
+      Keys are used to uniquely identify sibling elements of the same type
+      during re-renders. The
+      <a href="https://www.npmjs.com/package/uuid">UUID package</a> can be used
+      to create unique ids if you're not working with a DB that provides them.
+      Make sure you set the keys outside the component, if you set them in the
+      JSX itself it'll be re-rendered each time which defeats the point.
+    </p>
+
+    <p>
+      Indexes as keys are
+      <a href="https://www.developerway.com/posts/react-key-attribute"
+        >usually a bad idea</a
+      >, but in some situations can lead to better performance without the
+      drawbacks. For example a paginated list where the components don't have
+      state, it's faster to just use the index as a key so the components can
+      just have their contents replaced, rather than being unmounted and new
+      components mounted.
+    </p>
+
+    <h3>Props</h3>
+
+    <p>
+      Props can be destructured by using an object with the names of the props
+      you want as the param of the component function (like
+      <code>Button({ text, classes })</code>).
+    </p>
+
+    <p>
+      Default props can be set by setting the defaultProps property of the
+      component. It's also possible to combine destructuring and default props
+      like <code>Button({ text = "Click Me!", classes = "text-lg" })</code>.
+    </p>
   </article>
 
   <article>
     <h1 id=""></h1>
+  </article>
+
+  <article>
+    <h1 id="jsx">JSX</h1>
+
+    <p>
+      JSX is a filetype that lets you write HTML-like markup in a JS file. Use
+      curly braces ({}) to embed JS expressions or variables, but only as text
+      directly inside a JSX tag or as attributes immediately following an '='.
+    </p>
+
+    <h3>JSX Rules</h3>
+    <dl>
+      <dt>Return a single root element</dt>
+      <dd>
+        If you want to return multiple elements, wrap them in a div or a
+        <a href="https://react.dev/reference/react/Fragment">React Fragment</a>
+      </dd>
+      <dt>Close all tags</dt>
+      <dd>Tags that're self-closing in HTML aren't in JSX</dd>
+      <dt>camelCase <em>most</em> things</dt>
+      <dd>
+        Because JSX turns into JS, you can't use stuff like class or '-' which
+        you usually would in HTML. So class becomes className and other stuff is
+        camel cased. <code>aria</code> and <code>data</code> attributes are
+        written with dashes as in HTML for historic reasons.
+      </dd>
+    </dl>
   </article>
 
   <article>
