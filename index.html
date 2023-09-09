@@ -243,6 +243,10 @@ layout: home
               Bootstrap
             </li>
             <li class="list-group-item">
+              <i class="devicon-tailwindcss-plain"></i>
+              Tailwind
+            </li>
+            <li class="list-group-item">
               <i class="devicon-sass-original"></i>
               Sass
             </li>
@@ -385,6 +389,100 @@ layout: home
     </div>
 
     <div class="accordion-item">
+      <h2 class="accordion-header" id="js-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#js-body"
+          aria-expanded="false"
+          aria-controls="js-body"
+        >
+          <i class="devicon-javascript-plain pe-2"></i>
+          Javascript
+          <span class="flex-grow-1"></span>
+          <span class="badge text-bg-info me-3">Experienced</span>
+        </button>
+      </h2>
+      <div
+        id="js-body"
+        class="accordion-collapse collapse"
+        aria-labelledby="js-header"
+        data-bs-parent="#skillsAccordion"
+      >
+        <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
+          <div class="flex-grow-1">
+            <p>
+              I have some familiarity with the basics of vanilla JS (things on
+              the level of <code>.querySelectorAll</code> and the different
+              variables/comparison operators), but am a bit rusty on anything
+              beyond that after mostly using Hotwire for 6 months while working
+              on the registration site.
+            </p>
+            <p>
+              Now that I'm just making changes and adding features to that site,
+              I plan to brush up on JS and pick up The Odin Project where I left
+              off, right at the start of Advanced Javascript. Hopefully that
+              will give me a working knowledge of the finer points of the
+              language, as well as how to use React, and if all goes to plan
+              I'll leverage that freshly gained knowledge (and probably some
+              further research on Impact.js) into making an educational games
+              site for KidsUP students.
+            </p>
+          </div>
+          <ul class="list-group list-group-flush text-lg-end">
+            <li class="list-group-item">
+              <h6>Related Skills</h6>
+            </li>
+            <li class="list-group-item">
+              <img
+                src="{{ site.baseurl }}/assets/images/astro.svg"
+                alt="Astro Logo"
+                height="16px"
+                class="astro"
+              />
+              Astro
+            </li>
+            <li class="list-group-item">
+              <svg
+                viewBox="0 0 196 196"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16px"
+                height="16px"
+                class="hotwire"
+              >
+                <path
+                  d="m16.38 184.8 109.46-44.72-35.27-3.31 76.73-66.59-44.33-4.16 53.9-55.53-136.52 70.03 54.89 6.44-67.32 54.38 30.07 2.97z"
+                />
+              </svg>
+              Hotwire
+            </li>
+            <li class="list-group-item">
+              <i class="devicon-npm-original-wordmark"></i>
+              npm/pnpm
+            </li>
+            <li class="list-group-item">
+              <i class="devicon-typescript-plain"></i>
+              Typescript
+            </li>
+            <li class="list-group-item">
+              <i class="devicon-webpack-plain"></i>
+              Webpack
+            </li>
+            <li class="list-group-item">
+              <img
+                src="{{ site.baseurl }}/assets/images/vite.svg"
+                alt="Vite Logo"
+                height="20px"
+              />
+              Vite
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
       <h2 class="accordion-header" id="devtools-header">
         <button
           class="accordion-button collapsed"
@@ -464,138 +562,6 @@ layout: home
         </div>
       </div>
     </div>
-
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="js-header">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#js-body"
-          aria-expanded="false"
-          aria-controls="js-body"
-        >
-          <i class="devicon-javascript-plain pe-2"></i>
-          Javascript
-          <span class="flex-grow-1"></span>
-          <span class="badge text-bg-warning me-3">Learning</span>
-        </button>
-      </h2>
-      <div
-        id="js-body"
-        class="accordion-collapse collapse"
-        aria-labelledby="js-header"
-        data-bs-parent="#skillsAccordion"
-      >
-        <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
-          <div class="flex-grow-1">
-            <p>
-              I have some familiarity with the basics of vanilla JS (things on
-              the level of <code>.querySelectorAll</code> and the different
-              variables/comparison operators), but am a bit rusty on anything
-              beyond that after mostly using Hotwire for 6 months while working
-              on the registration site.
-            </p>
-            <p>
-              Now that I'm just making changes and adding features to that site,
-              I plan to brush up on JS and pick up The Odin Project where I left
-              off, right at the start of Advanced Javascript. Hopefully that
-              will give me a working knowledge of the finer points of the
-              language, as well as how to use React, and if all goes to plan
-              I'll leverage that freshly gained knowledge (and probably some
-              further research on Impact.js) into making an educational games
-              site for KidsUP students.
-            </p>
-          </div>
-          <ul class="list-group list-group-flush text-lg-end">
-            <li class="list-group-item">
-              <h6>Related Skills</h6>
-            </li>
-            <li class="list-group-item">
-              <svg
-                viewBox="0 0 196 196"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16px"
-                height="16px"
-                class="hotwire"
-              >
-                <path
-                  d="m16.38 184.8 109.46-44.72-35.27-3.31 76.73-66.59-44.33-4.16 53.9-55.53-136.52 70.03 54.89 6.44-67.32 54.38 30.07 2.97z"
-                />
-              </svg>
-              Hotwire
-            </li>
-            <li class="list-group-item">
-              <i class="devicon-npm-original-wordmark"></i>
-              npm
-            </li>
-            <li class="list-group-item">
-              <i class="devicon-typescript-plain"></i>
-              Typescript
-            </li>
-            <li class="list-group-item">
-              <i class="devicon-webpack-plain"></i>
-              Webpack
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="docs-header">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#docs-body"
-          aria-expanded="false"
-          aria-controls="docs-body"
-        >
-          <i class="bi bi-file-text-fill pe-2"></i>
-          Documentation
-          <span class="flex-grow-1"></span>
-          <span class="badge text-bg-warning me-3">Learning</span>
-        </button>
-      </h2>
-      <div
-        id="docs-body"
-        class="accordion-collapse collapse"
-        aria-labelledby="docs-header"
-        data-bs-parent="#skillsAccordion"
-      >
-        <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
-          <div class="flex-grow-1">
-            <p>
-              Now that the
-              <a href="#ku-registration">KidsUP Registration Site</a>
-              is in production use, I've been tasked with writing documentation
-              for it so anyone who replaces me should I leave can continue
-              adding features or fixing bugs as needed. It's early days yet as
-              I've been swamped with new feature requests/changes since the site
-              launched, but I plan to create comprehensive docs for both the
-              backend of the site and its hosting setup. They'll be presented as
-              a static site built with Astro and the Starlight template.
-            </p>
-          </div>
-          <ul class="list-group list-group-flush text-lg-end">
-            <li class="list-group-item">
-              <h6>Related Skills</h6>
-            </li>
-            <li class="list-group-item">
-              <img
-                src="{{ site.baseurl }}/assets/images/astro.svg"
-                alt="Astro Logo"
-                height="16px"
-                class="astro"
-              />
-              Astro
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section
