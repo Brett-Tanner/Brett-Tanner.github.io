@@ -256,6 +256,89 @@ layout: home
     </div>
 
     <div class="accordion-item">
+      <h2 class="accordion-header" id="js-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#js-body"
+          aria-expanded="false"
+          aria-controls="js-body"
+        >
+          <i class="devicon-javascript-plain pe-2"></i>
+          Javascript
+          <span class="flex-grow-1"></span>
+          <span class="badge text-bg-success me-3">Confident</span>
+        </button>
+      </h2>
+      <div
+        id="js-body"
+        class="accordion-collapse collapse"
+        aria-labelledby="js-header"
+        data-bs-parent="#skillsAccordion"
+      >
+        <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
+          <div class="flex-grow-1">
+			<p>
+				I began learning Javascript in early 2021 as the first 'proper' language of my development journey, and have used it consistently since. Since mid-2022 all my personal and work projects have been written in Typescript, even small projects which probably don't need it, since I prefer the improved developer experience types provide. Writing Typescript after having used plain Javascript and Ruby for a year made me appreciate the appeal of strongly typed languages, and I'll likely pick up something like Go or Rust as my next language as a result.
+			</p>
+            <p>
+		      The Setsumeikai Form project was built with React, written entirely in Typescript. It uses React Router for navigation within the form and loading data from the Seasonal Registration Site API. Testing was done with Bun's built in test runner (which uses a Jest-compatible API). I have also worked on numerous small personal projects (using Typescript) for the Odin Project, which can be found on my Github.` When interactivity is required on the Seasonal Registration site I find Rails' built in Hotwire/Turbo/Stimulus integrations to be sufficient, and have developed a reasonable proficiency with those.
+            </p>
+          </div>
+          <ul class="list-group list-group-flush text-lg-end">
+            <li class="list-group-item">
+              <h6>Related Skills</h6>
+            </li>
+            <li class="list-group-item">
+              <img
+                src="{{ site.baseurl }}/assets/images/astro.svg"
+                alt="Astro Logo"
+                height="16px"
+                class="astro"
+              />
+              Astro
+            </li>
+            <li class="list-group-item">
+              <svg
+                viewBox="0 0 196 196"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16px"
+                height="16px"
+                class="hotwire"
+              >
+                <path
+                  d="m16.38 184.8 109.46-44.72-35.27-3.31 76.73-66.59-44.33-4.16 53.9-55.53-136.52 70.03 54.89 6.44-67.32 54.38 30.07 2.97z"
+                />
+              </svg>
+              Hotwire
+            </li>
+            <li class="list-group-item">
+              <i class="devicon-npm-original-wordmark"></i>
+              npm
+            </li>
+            <li class="list-group-item">
+              <i class="devicon-typescript-plain"></i>
+              Typescript
+            </li>
+            <li class="list-group-item">
+              <i class="devicon-webpack-plain"></i>
+              Webpack
+            </li>
+            <li class="list-group-item">
+              <img
+                src="{{ site.baseurl }}/assets/images/vite.svg"
+                alt="Vite Logo"
+                height="20px"
+              />
+              Vite
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
       <h2 class="accordion-header" id="aws-header">
         <button
           class="accordion-button collapsed"
@@ -389,100 +472,6 @@ layout: home
     </div>
 
     <div class="accordion-item">
-      <h2 class="accordion-header" id="js-header">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#js-body"
-          aria-expanded="false"
-          aria-controls="js-body"
-        >
-          <i class="devicon-javascript-plain pe-2"></i>
-          Javascript
-          <span class="flex-grow-1"></span>
-          <span class="badge text-bg-info me-3">Experienced</span>
-        </button>
-      </h2>
-      <div
-        id="js-body"
-        class="accordion-collapse collapse"
-        aria-labelledby="js-header"
-        data-bs-parent="#skillsAccordion"
-      >
-        <div class="accordion-body d-flex flex-column flex-lg-row gap-3">
-          <div class="flex-grow-1">
-            <p>
-              I have some familiarity with the basics of vanilla JS (things on
-              the level of <code>.querySelectorAll</code> and the different
-              variables/comparison operators), but am a bit rusty on anything
-              beyond that after mostly using Hotwire for 6 months while working
-              on the registration site.
-            </p>
-            <p>
-              Now that I'm just making changes and adding features to that site,
-              I plan to brush up on JS and pick up The Odin Project where I left
-              off, right at the start of Advanced Javascript. Hopefully that
-              will give me a working knowledge of the finer points of the
-              language, as well as how to use React, and if all goes to plan
-              I'll leverage that freshly gained knowledge (and probably some
-              further research on Impact.js) into making an educational games
-              site for KidsUP students.
-            </p>
-          </div>
-          <ul class="list-group list-group-flush text-lg-end">
-            <li class="list-group-item">
-              <h6>Related Skills</h6>
-            </li>
-            <li class="list-group-item">
-              <img
-                src="{{ site.baseurl }}/assets/images/astro.svg"
-                alt="Astro Logo"
-                height="16px"
-                class="astro"
-              />
-              Astro
-            </li>
-            <li class="list-group-item">
-              <svg
-                viewBox="0 0 196 196"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16px"
-                height="16px"
-                class="hotwire"
-              >
-                <path
-                  d="m16.38 184.8 109.46-44.72-35.27-3.31 76.73-66.59-44.33-4.16 53.9-55.53-136.52 70.03 54.89 6.44-67.32 54.38 30.07 2.97z"
-                />
-              </svg>
-              Hotwire
-            </li>
-            <li class="list-group-item">
-              <i class="devicon-npm-original-wordmark"></i>
-              npm/pnpm
-            </li>
-            <li class="list-group-item">
-              <i class="devicon-typescript-plain"></i>
-              Typescript
-            </li>
-            <li class="list-group-item">
-              <i class="devicon-webpack-plain"></i>
-              Webpack
-            </li>
-            <li class="list-group-item">
-              <img
-                src="{{ site.baseurl }}/assets/images/vite.svg"
-                alt="Vite Logo"
-                height="20px"
-              />
-              Vite
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item">
       <h2 class="accordion-header" id="devtools-header">
         <button
           class="accordion-button collapsed"
@@ -579,7 +568,7 @@ layout: home
         id="ku-registration"
         class="d-flex flex-column flex-lg-row align-items-center gap-2"
       >
-        KidsUp Registrations
+        KidsUp Seasonal Registrations
         <div class="d-flex gap-2">
           <a
             href="https://github.com/Brett-Tanner/db_prototype_v2"
@@ -620,7 +609,7 @@ layout: home
       </div>
       <div class="flex-grow-1">
         <p>
-          When I was hired, KidsUP was using a combination of Google Forms and
+          KidsUP was originally using a combination of Google Forms and
           Sheets to handle online reservations for their seasonal events. While
           it worked, making a large number of bookings was an incredibly
           cumbersome experience for customers, and the Sheet school managers
@@ -631,19 +620,79 @@ layout: home
           I was tasked with finding a more user-friendly way for customers to
           register for multiple activities/options and a way of displaying those
           registrations to school managers in a timely manner. After presenting
-          an early prototype to the company's CEO, I was given the go-ahead to
-          turn it into a full site, with the aim of having it ready to use by
+          an early prototype to management I was given the go-ahead, with the aim of having it ready to use by
           mid-May for Summer School.
         </p>
         <p>
           I was responsible for nearly all aspects of this project from start to
           finish, including but not limited to the initial design of the
           database, writing and testing all backend code, coding and styling the
-          views and deciding on/setting up hosting on AWS. Translations and
-          guidance on detailed business logic were provided by other members of
+          views and setting up hosting on AWS. Translations and design mockups were
+		  provided by other members of
           the online team, but ultimately implemented by me. The project was
-          delivered on schedule, and is currently in production use for the
-          largest seasonal event of the year.
+          delivered on schedule, and has now served the company for two seasonal events with no major issues.
+        </p>
+		<p>
+          Since its deployment I have been tasked with adding many new features like built-in surveys after registration for an event, PDF invoice generation, statistics charts for various levels of staff and more. Whenever I have free time I also take the opportunity to write tests and refactor/make optimisations I simply didn't have time for during inital development. This process has greatly increased the ease of adding new features to affected parts of the site, and now that I have a bit more pull in discussions with management I always insist on timelines for new projects which leave time for TDD and writing readable, efficient code.
+		</p>
+      </div>
+    </div>
+  </article>
+
+  <article
+    class="ku-registrations w-75 d-flex flex-column flex-lg-row justify-content-around align-items-center"
+  >
+    <div
+      class="d-flex flex-column justify-content-between align-items-center gap-3"
+    >
+      <h4
+        id="ku-setsumeikai"
+        class="d-flex flex-column flex-lg-row align-items-center gap-2"
+      >
+        KidsUp Setsumeikai Form
+        <div class="d-flex gap-2">
+          <a
+            href="https://github.com/Brett-Tanner/setsumeikai_calendar"
+            class="link-secondary"
+            target="_blank"
+            ><i class="devicon-github-original"></i
+          ></a>
+          <a href="https://kids-up.jp/book_appointment" class="link-secondary" target="_blank"
+            ><i class="bi bi-globe2"></i
+          ></a>
+        </div>
+      </h4>
+      <div
+        class="w-100 d-flex flex-column flex-lg-row flex-lg-wrap align-items-center justify-content-center gap-3"
+      >
+        <img
+          src="{{ site.baseurl }}/assets/images/projects/setsumeikai/school_list.avif"
+          alt="Setsumeikai school list"
+          class="img-fluid rounded-4"
+		  width="45%"
+		/>
+        <img
+          src="{{ site.baseurl }}/assets/images/projects/setsumeikai/calendar.avif"
+          alt="Setsumeikai calendar"
+          class="img-fluid rounded-4"
+		  width="45%"
+        />
+        <img
+          src="{{ site.baseurl }}/assets/images/projects/setsumeikai/form.avif"
+          alt="Setsumeikai calendar"
+          class="img-fluid rounded-4"
+		  width="45%"
+        />
+      </div>
+      <div class="flex-grow-1">
+        <p>
+	      The previous form customers used to register for information sessions was a relic from our old site, embedded in an iframe sourced from a site no-one had access to anymore. I was asked to replace the iframe with a more modern and responsive form, as well as create backend for staff to create information sessions and manage inquiries for them. The new backend also had to maintain compatibility with a legacy Google Sheets system which regularly queried the old backend's API for new inquiries.
+        </p>
+        <p>
+		  I decided to create the new form in React, and use the existing Season Registrations site as the backend since staff already had access to it. The React app embedded on the Wordpress site queries the Seasonal backend for a list of schools and their associated Setsumeikais (created through the backend UI by staff), then once the user completes the form submits a POST request for the backend to create a new inquiry. That inquiry can then be managed through the backend UI by staff, and will be provided to the legacy Google Sheets system when requested through the API exposed for that purpose.
+        </p>
+        <p>
+		  This redesign dramatically improved UX for customers wishing to register for an information sessions, especially on mobile device. It also helped staff by consolidating the processes for adding sessions and managing their inquiries into a single place. As the iframe form and assocciated database were the last things requiring the old site to be kept alive the servers for that site can now be spun down, saving the company some money as well.
         </p>
       </div>
     </div>
